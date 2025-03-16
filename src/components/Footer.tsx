@@ -1,5 +1,6 @@
 
 import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaTelegram, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -24,15 +25,23 @@ const Footer = () => {
               Discover exquisite gemstones of the highest quality, ethically sourced and expertly crafted.
             </p>
             <div className="flex space-x-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-                <Instagram size={20} />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-                <Facebook size={20} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-                <Twitter size={20} />
-              </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+  <FaInstagram size={20} />
+</a>
+<a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+  <FaFacebook size={20} />
+</a>
+<a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+  <FaTwitter size={20} />
+</a>
+<a href="https://wa.me/+251920537777" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+  <FaWhatsapp size={20} />
+</a>
+<a href="https://t.me/JOHNESKU22" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+  <FaTelegram size={20} />
+</a>
+
+
             </div>
           </div>
           
@@ -71,21 +80,23 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="mr-3 mt-1 text-gem-red" size={18} />
                 <span className="text-white/70">
-                  123 Gemstone Avenue<br />
-                  New York, NY 10001<br />
-                  United States
+                Hawassa City, Sidama Regional State/ Addis Ababa, Kirkos Sub City, Ethiopia.<br />
+                810 Saturn St, Jupiter, Florida 33477, United States.<br />
+                  
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 text-gem-red" size={18} />
-                <a href="tel:+12125551234" className="text-white/70 hover:text-white transition-colors duration-200">
-                  +1 (212) 555-1234
+                <a href="tel:+251920537777" className="text-white/70 hover:text-white transition-colors duration-200">
+                 (+251) 920537777
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 text-gem-red" size={18} />
-                <a href="mailto:info@onexgems.com" className="text-white/70 hover:text-white transition-colors duration-200">
-                  info@onexgems.com
+                <a href="mailto:johnesku22@gmail.com" className="text-white/70 hover:text-white transition-colors duration-200">
+                johnesku22@gmail.com<br/>
+                info@onexonememberplc.com
+
                 </a>
               </li>
             </ul>
@@ -122,7 +133,7 @@ const Footer = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
-            <Link to="/shipping-policy" className="hover:text-white transition-colors duration-200">Shipping Policy</Link>
+            
           </div>
         </div>
       </div>

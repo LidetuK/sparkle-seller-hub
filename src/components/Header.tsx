@@ -28,7 +28,7 @@ const Header = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-8',
         isScrolled 
-          ? 'bg-white/80 shadow-sm backdrop-blur-md' 
+          ? 'bg-black/80 shadow-sm backdrop-blur-md' 
           : 'bg-transparent'
       )}
     >
@@ -75,15 +75,26 @@ const Header = () => {
 
           {/* Right Side Icons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="p-2 rounded-full hover:bg-gray-100/10 transition-colors">
-              <Search size={20} className="text-white" />
-            </button>
-            <button className="p-2 rounded-full hover:bg-gray-100/10 transition-colors">
-              <User size={20} className="text-white" />
-            </button>
-            <button className="p-2 rounded-full hover:bg-gray-100/10 transition-colors">
-              <ShoppingCart size={20} className="text-white" />
-            </button>
+          <button className="p-2 rounded-full bg-gray-100">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebook size={20} className="text-gem-charcoal" />
+            </a>
+          </button>
+          <button className="p-2 rounded-full bg-gray-100">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram size={20} className="text-gem-charcoal" />
+            </a>
+          </button>
+          <button className="p-2 rounded-full bg-gray-100">
+            <a href="https://wa.me/+251920537777" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp size={20} className="text-gem-charcoal" />
+            </a>
+          </button>
+          <button className="p-2 rounded-full bg-gray-100">
+            <a href="https://t.me/JOHNESKU22" target="_blank" rel="noopener noreferrer">
+              <FaTelegram size={20} className="text-gem-charcoal" />
+            </a>
+          </button>
           </div>
 
           {/* Mobile Menu Button */}

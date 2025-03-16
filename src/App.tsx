@@ -10,7 +10,9 @@ import GemstoneGuide from "./pages/GemstoneGuide";
 import Blog from "./pages/Blog";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import Contact from "./pages/Contact";
+import TermsofServices from "./pages/TermsofServices";
 import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/terms-of-service" element={<TermsofServices />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
