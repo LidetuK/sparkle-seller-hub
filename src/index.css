@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,80 +8,74 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 240 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 240 5.9% 30%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 15%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,6 +93,92 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .gem-shine {
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:animate-shine;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .nav-link {
+    @apply relative px-1 py-2 text-foreground/80 hover:text-foreground transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gem-red after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .nav-link-active {
+    @apply text-foreground after:scale-x-100;
+  }
+  
+  .gem-button {
+    @apply relative overflow-hidden bg-white border border-gem-charcoal/20 text-gem-charcoal px-6 py-3 rounded-md shadow-sm transition-all duration-300 hover:shadow-gem-hover hover:border-gem-charcoal/50 z-10 before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-gem-teal/10 before:via-gem-yellow/10 before:to-gem-red/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300;
+  }
+  
+  .gem-button-primary {
+    @apply relative overflow-hidden bg-gem-charcoal text-white px-6 py-3 rounded-md shadow-sm transition-all duration-300 hover:shadow-gem-hover z-10 before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-gem-teal before:via-gem-yellow before:to-gem-red before:opacity-0 hover:before:opacity-10 before:transition-opacity before:duration-300;
+  }
+  
+  .gem-card {
+    @apply bg-white rounded-xl p-6 shadow-gem transition-all duration-300 hover:shadow-gem-hover;
+  }
+  
+  .gem-glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/30 rounded-xl shadow-sm;
+  }
+}
+
+.gem-slider {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 2%, #000 98%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 2%, #000 98%, transparent 100%);
+}
+
+.section-divider {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, transparent 49.9%, #fff 50%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gem-charcoal/30 rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gem-charcoal/50;
+}
+
+/* Image lazy loading effect */
+.lazy-image {
+  filter: blur(15px);
+  transition: filter 0.5s ease-out;
+}
+
+.lazy-image.loaded {
+  filter: blur(0);
 }
