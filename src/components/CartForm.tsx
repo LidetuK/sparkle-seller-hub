@@ -92,15 +92,16 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative max-h-[90vh] overflow-y-auto p-4">
       <button 
         onClick={onClose}
-        className="absolute right-0 top-0 p-2 text-gem-charcoal/70 hover:text-gem-charcoal transition-colors"
+        className="absolute right-2 top-2 md:right-4 md:top-4 p-2 text-gem-charcoal/70 hover:text-gem-charcoal transition-colors bg-gray-100 rounded-full z-10"
+        aria-label="Close form"
       >
         <X className="w-5 h-5" />
       </button>
       
-      <div className="flex flex-col sm:flex-row gap-6 mb-6">
+      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-6 mt-6 md:mt-0">
         <div className="sm:w-1/3">
           <div className="aspect-square rounded-lg overflow-hidden bg-gray-100">
             <img 
@@ -122,47 +123,70 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
       
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Full Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter your full name" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Full Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter your full name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="Enter your email" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input type="email" placeholder="Enter your email" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone Number</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter your phone number" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter your phone number" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="quantity"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Quantity</FormLabel>
+                  <FormControl>
+                    <Input 
+                      type="number" 
+                      min="1"
+                      {...field}
+                      onChange={(e) => field.onChange(parseInt(e.target.value))}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           
           <FormField
             control={form.control}
@@ -178,30 +202,16 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
             )}
           />
           
-          <FormField
-            control={form.control}
-            name="quantity"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Quantity</FormLabel>
-                <FormControl>
-                  <Input 
-                    type="number" 
-                    min="1"
-                    {...field}
-                    onChange={(e) => field.onChange(parseInt(e.target.value))}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <div className="pt-4">
-            <Button type="submit" className="w-full flex items-center justify-center gap-2" disabled={isSubmitting}>
+          <div className="pt-4 pb-2">
+            <Button 
+              type="submit" 
+              className="w-full flex items-center justify-center gap-2 bg-gem-charcoal hover:bg-gem-black" 
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Processing..." : (
                 <>
                   Place Order
+                  <Check className="w-4 h-4" />
                 </>
               )}
             </Button>

@@ -80,31 +80,31 @@ const WhyChooseUs = () => {
             <div className="md:w-1/2 p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-semibold mb-4">Analysis Reports & Certifications</h3>
               <p className="text-gem-charcoal/70 mb-6">
-              We work with accredited laboratories to analyze and verify the composition of our minerals and gemstones.On the Left , you will find some of our certified analysis reports, confirming the quality and value of our products.
+                We work with accredited laboratories to analyze and verify the composition of our minerals and gemstones. On the right, you will find some of our certified analysis reports, confirming the quality and value of our products.
               </p>
               <a href="tel:0920537777" className="gem-button-primary inline-block">
                 Book a Call With us
               </a>
-          
-   
-      </div>
-      <div className="flex w-full h-screen">
-  <div className="w-1/2 h-full">
-    <img 
-      src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
-      alt="Expert gemologist examining a precious stone" 
-      className="w-full h-full object-cover"
-    />
-  </div>
-  <div className="w-1/2 h-full">
-    <img 
-      src="/lovable-uploads/photo_2025-02-06_16-31-37__2_-removebg-preview.png" 
-      alt="Expert gemologist examining a precious stone" 
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
+            </div>
+            
+            <div className="md:w-1/2 p-4 md:p-8">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="aspect-[3/4] shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-xl">
+                  <img 
+                    src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
+                    alt="Certificate 1" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-[3/4] shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-xl">
+                  <img 
+                    src="/lovable-uploads/photo_2025-02-06_16-31-37__2_-removebg-preview.png" 
+                    alt="Certificate 2" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

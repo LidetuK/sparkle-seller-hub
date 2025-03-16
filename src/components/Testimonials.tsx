@@ -9,6 +9,7 @@ interface Testimonial {
   name: string;
   quote: string;
   rating: number;
+  image?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -16,36 +17,43 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Emily Thompson",
     quote: "The ruby I purchased from ONEX exceeded all my expectations. The color is magnificent and the craftsmanship is impeccable. I'll definitely be returning for more stunning pieces.",
-    rating: 5
+    rating: 5,
+    image: "/lovable-uploads/RUBY.jpg"
   },
   {
     id: 2,
     name: "Michael Chen",
     quote: "As a gemstone collector for over 15 years, I can confidently say that ONEX offers some of the finest specimens I've encountered. Their dedication to quality and authenticity is unmatched.",
-    rating: 5
+    rating: 5,
+    image: "/lovable-uploads/EMERALD.jpg"
   },
   {
     id: 3,
     name: "Sarah Johnson",
     quote: "I purchased an anniversary gift for my wife and the sapphire pendant is breathtaking. The customer service was exceptional, and they helped me select the perfect stone.",
-    rating: 5
+    rating: 5,
+    image: "/lovable-uploads/SAPHIER.jpg"
   },
   {
     id: 4,
     name: "David Wilson",
     quote: "I was nervous about buying fine gemstones online, but ONEX made the process seamless. The emerald arrived exactly as described, and the certification gave me complete peace of mind.",
-    rating: 4
+    rating: 4,
+    image: "/lovable-uploads/OPAL.jpg"
   },
   {
     id: 5,
     name: "Alexandra Rivera",
     quote: "As a jewelry designer, I rely on high-quality gemstones for my creations. ONEX consistently provides exceptional stones that my clients adore. Their ethical sourcing practices align perfectly with my brand values.",
-    rating: 5
+    rating: 5,
+    image: "/lovable-uploads/TOURMALINE BLUE.jpg"
   }
 ];
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -60,6 +68,27 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
+  // Handle touch events for mobile swiping
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swipe left
+      nextSlide();
+    }
+    
+    if (touchStart - touchEnd < -50) {
+      // Swipe right
+      prevSlide();
+    }
+  };
+
   useEffect(() => {
     const autoSlide = setInterval(() => {
       nextSlide();
@@ -70,7 +99,8 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (sliderRef.current) {
-      sliderRef.current.style.transform = `translateX(-${currentIndex * 100}%)`;
+      const slideWidth = 100 / testimonials.length;
+      sliderRef.current.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
     }
   }, [currentIndex]);
 
@@ -102,16 +132,19 @@ const Testimonials = () => {
           {/* Testimonial Slider */}
           <div 
             ref={sliderRef}
-            className="gem-slider flex transition-transform duration-700 ease-out"
+            className="flex transition-transform duration-700 ease-out"
             style={{ width: `${testimonials.length * 100}%` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             {testimonials.map((testimonial, index) => (
               <div 
                 key={testimonial.id} 
-                className="w-full px-4"
+                className="w-full px-4 md:px-8"
                 style={{ flex: `0 0 ${100 / testimonials.length}%` }}
               >
-                <div className="bg-white text-gem-charcoal rounded-2xl p-8 md:p-12 shadow-xl">
+                <div className="bg-white text-gem-charcoal rounded-2xl p-6 md:p-12 shadow-xl h-full">
                   <div className="mb-6 flex items-start">
                     <div className="flex-shrink-0 mr-4">
                       <Quote size={40} className="text-gem-red/20" />
@@ -119,16 +152,19 @@ const Testimonials = () => {
                     <p className="text-lg md:text-xl italic">"{testimonial.quote}"</p>
                   </div>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center">
-                      <img 
-                        
-                        alt={testimonial.name} 
-                        className="w-14 h-14 rounded-full object-cover mr-4"
-                      />
+                      <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mr-4">
+                        {testimonial.image && (
+                          <img 
+                            src={testimonial.image}
+                            alt={testimonial.name} 
+                            className="w-full h-full object-cover"
+                          />
+                        )}
+                      </div>
                       <div>
                         <h4 className="font-semibold">{testimonial.name}</h4>
-                        
                       </div>
                     </div>
                     
@@ -151,18 +187,18 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 text-gem-charcoal p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300"
+            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 text-gem-charcoal p-2 md:p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={20} />
           </button>
           
           <button 
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 text-gem-charcoal p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300"
+            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 text-gem-charcoal p-2 md:p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300"
             aria-label="Next testimonial"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={20} />
           </button>
         </div>
         
