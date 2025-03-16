@@ -1,0 +1,187 @@
+
+import { useState } from 'react';
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { X } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { toast } from "@/hooks/use-toast";
+
+interface CartFormProps {
+  product: {
+    id: string;
+    name: string;
+    price: string;
+    image: string;
+  };
+  onClose: () => void;
+}
+
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
+  phone: z.string().min(10, { message: "Please enter a valid phone number" }),
+  address: z.string().min(5, { message: "Address must be at least 5 characters" }),
+  quantity: z.number().min(1, { message: "Quantity must be at least 1" }),
+});
+
+const CartForm = ({ product, onClose }: CartFormProps) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      quantity: 1,
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Order Submitted Successfully!",
+        description: `Thank you for your order of ${values.quantity} ${product.name}(s). We will contact you shortly.`,
+      });
+      onClose();
+    }, 1500);
+    
+    console.log("Form values:", values);
+    console.log("Product ordered:", product);
+  }
+
+  return (
+    <div className="relative">
+      <button 
+        onClick={onClose}
+        className="absolute right-0 top-0 p-2 text-gem-charcoal/70 hover:text-gem-charcoal transition-colors"
+      >
+        <X className="w-5 h-5" />
+      </button>
+      
+      <div className="flex flex-col sm:flex-row gap-6 mb-6">
+        <div className="sm:w-1/3">
+          <div className="aspect-square rounded-lg overflow-hidden bg-gray-100">
+            <img 
+              src={product.image} 
+              alt={product.name} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        
+        <div className="sm:w-2/3">
+          <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+          <p className="text-xl font-semibold text-gem-charcoal mb-4">{product.price}</p>
+          <p className="text-sm text-gem-charcoal/70 mb-4">
+            This exquisite piece is available for immediate purchase. 
+            Please fill out the form below to place your order.
+          </p>
+        </div>
+      </div>
+      
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Full Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your full name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input type="email" placeholder="Enter your email" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone Number</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your phone number" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="address"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Shipping Address</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your shipping address" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="quantity"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Quantity</FormLabel>
+                <FormControl>
+                  <Input 
+                    type="number" 
+                    min="1"
+                    {...field}
+                    onChange={(e) => field.onChange(parseInt(e.target.value))}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <div className="pt-4">
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Processing..." : "Place Order"}
+            </Button>
+          </div>
+        </form>
+      </Form>
+    </div>
+  );
+};
+
+export default CartForm;
