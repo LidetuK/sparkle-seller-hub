@@ -1,14 +1,78 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Check } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
 
 const Contact = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "5c6dd5d4-6a89-44a2-bc94-42257b680786",
+          subject: `New contact form submission: ${formData.subject}`,
+          from_name: "ONEX Gems Website",
+          to_email: "johnesku22@gmail.com",
+          ...formData
+        })
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        toast({
+          title: "Message Sent",
+          description: "Thank you for your message. We'll get back to you soon!",
+        });
+      } else {
+        throw new Error(result.message || 'Something went wrong');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -25,7 +89,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gem-charcoal mb-1">Name</label>
@@ -35,6 +99,8 @@ const Contact = () => {
                       className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gem-teal focus:border-transparent"
                       placeholder="Your name"
                       required
+                      value={formData.name}
+                      onChange={handleChange}
                     />
                   </div>
                   <div>
@@ -45,6 +111,8 @@ const Contact = () => {
                       className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gem-teal focus:border-transparent"
                       placeholder="Your email address"
                       required
+                      value={formData.email}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -56,6 +124,8 @@ const Contact = () => {
                     className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gem-teal focus:border-transparent"
                     placeholder="Message subject"
                     required
+                    value={formData.subject}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -66,13 +136,21 @@ const Contact = () => {
                     className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gem-teal focus:border-transparent resize-none"
                     placeholder="Your message"
                     required
+                    value={formData.message}
+                    onChange={handleChange}
                   ></textarea>
                 </div>
                 <button 
                   type="submit"
-                  className="gem-button-primary w-full"
+                  className="gem-button-primary w-full flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : submitted ? (
+                    <>
+                      <Check className="w-4 h-4" />
+                      Message Sent
+                    </>
+                  ) : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -108,8 +186,8 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Email Address</p>
                       <p className="text-gem-charcoal/70">
-                        <a href="mailto:info@onexgems.com" className="hover:text-gem-red transition-colors">
-                          info@onexgems.com
+                        <a href="mailto:johnesku22@gmail.com" className="hover:text-gem-red transition-colors">
+                          johnesku22@gmail.com
                         </a>
                       </p>
                     </div>

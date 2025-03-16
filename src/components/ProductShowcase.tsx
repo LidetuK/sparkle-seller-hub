@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
+import { ShoppingCart } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import CartForm from '@/components/CartForm';
 
 interface Product {
   id: string;
@@ -82,6 +85,7 @@ const categories = ["All", "Diamond", "Ruby", "Sapphire", "Emerald", "Amethyst",
 const ProductShowcase = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -156,9 +160,25 @@ const ProductShowcase = () => {
                 
                 {/* Quick actions */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <button className="w-full bg-white py-3 rounded-md font-medium shadow-lg hover:bg-white/90 transition-colors duration-200">
-                    Quick View
-                  </button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button 
+                        className="w-full bg-white py-3 rounded-md font-medium shadow-lg hover:bg-white/90 transition-colors duration-200 flex items-center justify-center gap-2"
+                        onClick={() => setSelectedProduct(product)}
+                      >
+                        <ShoppingCart className="w-4 h-4" />
+                        Add to Cart
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-md">
+                      {selectedProduct && (
+                        <CartForm 
+                          product={selectedProduct} 
+                          onClose={() => setSelectedProduct(null)} 
+                        />
+                      )}
+                    </DialogContent>
+                  </Dialog>
                 </div>
                 
                 {/* Badges */}

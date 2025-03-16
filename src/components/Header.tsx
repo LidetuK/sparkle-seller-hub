@@ -60,6 +60,9 @@ const Header = () => {
             <NavLink to="/testimonials" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
               Testimonials
             </NavLink>
+            <NavLink to="/about-us" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
+              About Us
+            </NavLink>
             <NavLink to="/contact" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
               Contact
             </NavLink>
@@ -131,6 +134,13 @@ const Header = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Testimonials
+          </NavLink>
+          <NavLink 
+            to="/about-us" 
+            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About Us
           </NavLink>
           <NavLink 
             to="/contact" 

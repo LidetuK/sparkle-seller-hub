@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { X } from "lucide-react";
+import { X, Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -49,21 +49,49 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Order Submitted Successfully!",
-        description: `Thank you for your order of ${values.quantity} ${product.name}(s). We will contact you shortly.`,
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "5c6dd5d4-6a89-44a2-bc94-42257b680786",
+          subject: `New Order: ${product.name}`,
+          from_name: "ONEX Gems Website",
+          to_email: "johnesku22@gmail.com",
+          product: product.name,
+          price: product.price,
+          total_price: `${values.quantity} x ${product.price}`,
+          ...values
+        })
       });
-      onClose();
-    }, 1500);
-    
-    console.log("Form values:", values);
-    console.log("Product ordered:", product);
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "Order Submitted Successfully!",
+          description: `Thank you for your order of ${values.quantity} ${product.name}(s). We will contact you shortly.`,
+        });
+        onClose();
+      } else {
+        throw new Error(result.message || 'Something went wrong');
+      }
+    } catch (error) {
+      console.error('Order submission error:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your order. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -174,8 +202,12 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
           />
           
           <div className="pt-4">
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Processing..." : "Place Order"}
+            <Button type="submit" className="w-full flex items-center justify-center gap-2" disabled={isSubmitting}>
+              {isSubmitting ? "Processing..." : (
+                <>
+                  Place Order
+                </>
+              )}
             </Button>
           </div>
         </form>
