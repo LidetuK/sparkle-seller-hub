@@ -7,8 +7,6 @@ import { cn } from '@/lib/utils';
 interface Testimonial {
   id: number;
   name: string;
-  role: string;
-  avatar: string;
   quote: string;
   rating: number;
 }
@@ -17,40 +15,30 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Emily Thompson",
-    role: "Designer",
-    avatar: "https://randomuser.me/api/portraits/women/21.jpg",
     quote: "The ruby I purchased from ONEX exceeded all my expectations. The color is magnificent and the craftsmanship is impeccable. I'll definitely be returning for more stunning pieces.",
     rating: 5
   },
   {
     id: 2,
     name: "Michael Chen",
-    role: "Collector",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     quote: "As a gemstone collector for over 15 years, I can confidently say that ONEX offers some of the finest specimens I've encountered. Their dedication to quality and authenticity is unmatched.",
     rating: 5
   },
   {
     id: 3,
     name: "Sarah Johnson",
-    role: "Jewelry Enthusiast",
-    avatar: "https://randomuser.me/api/portraits/women/43.jpg",
     quote: "I purchased an anniversary gift for my wife and the sapphire pendant is breathtaking. The customer service was exceptional, and they helped me select the perfect stone.",
     rating: 5
   },
   {
     id: 4,
     name: "David Wilson",
-    role: "First-time Buyer",
-    avatar: "https://randomuser.me/api/portraits/men/54.jpg",
     quote: "I was nervous about buying fine gemstones online, but ONEX made the process seamless. The emerald arrived exactly as described, and the certification gave me complete peace of mind.",
     rating: 4
   },
   {
     id: 5,
     name: "Alexandra Rivera",
-    role: "Jewelry Designer",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
     quote: "As a jewelry designer, I rely on high-quality gemstones for my creations. ONEX consistently provides exceptional stones that my clients adore. Their ethical sourcing practices align perfectly with my brand values.",
     rating: 5
   }
@@ -134,13 +122,13 @@ const Testimonials = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <img 
-                        src={testimonial.avatar} 
+                        
                         alt={testimonial.name} 
                         className="w-14 h-14 rounded-full object-cover mr-4"
                       />
                       <div>
                         <h4 className="font-semibold">{testimonial.name}</h4>
-                        <p className="text-sm text-gem-charcoal/60">{testimonial.role}</p>
+                        
                       </div>
                     </div>
                     

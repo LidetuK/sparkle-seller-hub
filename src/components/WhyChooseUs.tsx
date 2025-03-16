@@ -21,8 +21,8 @@ const features = [
   },
   {
     icon: TruckIcon,
-    title: "Global Shipping",
-    description: "Secure and insured shipping to anywhere in the world with real-time tracking information."
+    title: "Global Market Expertise",
+    description: "With deep industry knowledge, we provide competitive solutions and insights in the global gemstone trade."
   }
 ];
 
@@ -78,21 +78,33 @@ const WhyChooseUs = () => {
         <div className="mt-20 bg-gradient-to-r from-gem-teal/10 via-gem-yellow/10 to-gem-red/10 rounded-2xl overflow-hidden">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4">Expert Gemstone Consultation</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4">Analysis Reports & Certifications</h3>
               <p className="text-gem-charcoal/70 mb-6">
-                Not sure which gemstone is right for you? Our gemologists are available for personalized consultations to help you find the perfect stone.
+              We work with accredited laboratories to analyze and verify the composition of our minerals and gemstones.On the Left , you will find some of our certified analysis reports, confirming the quality and value of our products.
               </p>
-              <a href="/contact" className="gem-button-primary inline-block">
-                Book a Consultation
+              <a href="tel:0920537777" className="gem-button-primary inline-block">
+                Book a Call With us
               </a>
-            </div>
-            <div className="md:w-1/2 h-60 md:h-80">
-              <img 
-                src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?q=80&w=1974&auto=format&fit=crop" 
-                alt="Expert gemologist examining a precious stone" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+          
+   
+      </div>
+      <div className="flex w-full h-screen">
+  <div className="w-1/2 h-full">
+    <img 
+      src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
+      alt="Expert gemologist examining a precious stone" 
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="w-1/2 h-full">
+    <img 
+      src="/lovable-uploads/photo_2025-02-06_16-31-37__2_-removebg-preview.png" 
+      alt="Expert gemologist examining a precious stone" 
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
+
           </div>
         </div>
       </div>

@@ -164,10 +164,11 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Our Address</p>
                       <p className="text-gem-charcoal/70">
-                        123 Gemstone Avenue<br />
-                        New York, NY 10001<br />
-                        United States
-                      </p>
+  <strong>Address 1:</strong> Hawassa City, Sidama Regional State / Addis Ababa, Kirkos Sub City, Ethiopia.
+  <br />
+  <strong>Address 2:</strong> 810 Saturn St, Jupiter, Florida 33477, United States.
+</p>
+
                     </div>
                   </li>
                   <li className="flex">
@@ -176,7 +177,7 @@ const Contact = () => {
                       <p className="font-medium">Phone Number</p>
                       <p className="text-gem-charcoal/70">
                         <a href="tel:+12125551234" className="hover:text-gem-red transition-colors">
-                          +1 (212) 555-1234
+                          (+251) 920537777
                         </a>
                       </p>
                     </div>
@@ -186,9 +187,16 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Email Address</p>
                       <p className="text-gem-charcoal/70">
-                        <a href="mailto:johnesku22@gmail.com" className="hover:text-gem-red transition-colors">
-                          johnesku22@gmail.com
-                        </a>
+                      <a href="mailto:johnesku22@gmail.com" className="hover:text-gem-red transition-colors">
+  johnesku22@gmail.com
+</a>
+<br />
+                      <a href="mailto:info@onexonememberplc.com" className="hover:text-gem-red transition-colors">
+  info@onexonememberplc.com
+</a>
+
+
+
                       </p>
                     </div>
                   </li>
@@ -209,7 +217,7 @@ const Contact = () => {
               <div className="rounded-xl overflow-hidden h-72">
                 <iframe 
                   title="ONEX Gems Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25903e47bd5a7%3A0xf5df5ebd6cc8c7a0!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1652456235045!5m2!1sen!2s" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63050.77700552987!2d38.71774785864389!3d9.002154560759449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85b5c3978a67%3A0xc067aedfe8ff4ed4!2sKirkos%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1742159935419!5m2!1sen!2set" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

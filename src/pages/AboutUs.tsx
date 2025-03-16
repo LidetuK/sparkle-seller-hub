@@ -48,20 +48,13 @@ const AboutUs = () => {
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                 <div className="space-y-4 text-gem-charcoal/80">
                   <p>
-                    Founded in 2001, ONEX Gems began as a family-owned business with a passion for 
-                    exceptional gemstones. What started as a small operation has grown into a global 
-                    enterprise, but our commitment to quality and personal service has never wavered.
+                  ONE X ONE Member began with a passion for exceptional gemstones. What started as a small operation has grown into a global enterprise, but our commitment to quality and personal service has never wavered.
                   </p>
                   <p>
-                    Our founder, John Esku, traveled across continents to source the most exquisite 
-                    gemstones directly from miners and local artisans. This direct relationship with 
-                    sources allows us to ensure ethical practices and bring you gemstones of remarkable 
-                    quality at competitive prices.
+                  Our founder, Mr. Yohannes Gézahegn, traveled across continents to source the most exquisite gemstones directly from miners and local artisans. This direct relationship with the sources allows us to ensure ethical practices and offer gemstones of remarkable quality at competitive prices.
                   </p>
                   <p>
-                    Today, we continue to build on that foundation, combining traditional knowledge with 
-                    modern technology and design to create unique pieces that celebrate the natural 
-                    beauty of our Earth's treasures.
+                  Today, we continue to build on that foundation, combining traditional knowledge with modern technology and design to create unique pieces that celebrate the natural beauty of Earth's treasures.
                   </p>
                 </div>
               </div>
@@ -69,7 +62,7 @@ const AboutUs = () => {
                 <iframe 
                   width="100%" 
                   height="100%" 
-                  src="https://www.youtube.com/embed/9P_HkfWbO_E?si=yQWuZ65mwLwAaA9p" 
+                  src="/lovable-uploads/video_2025-03-16_16-01-50.mp4" 
                   title="Our Story" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
@@ -156,7 +149,7 @@ const AboutUs = () => {
                 <iframe 
                   width="100%" 
                   height="100%" 
-                  src="https://www.youtube.com/embed/l8g0z8yZ6FU?si=6ykYZPG-dh8ltDfD" 
+                  src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
                   title="Gemstone Sourcing Process" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
@@ -177,7 +170,7 @@ const AboutUs = () => {
                       <Award className="w-6 h-6 text-gem-red" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Responsible Jewellery Council</h3>
+                      <h3 className="font-semibold mb-1">Responsible Gem Stone Collector</h3>
                       <p className="text-sm text-gem-charcoal/70">
                         Certified member since 2010, adhering to strict standards for ethical, 
                         social, and environmental practices throughout our supply chain.
@@ -190,9 +183,9 @@ const AboutUs = () => {
                       <Award className="w-6 h-6 text-gem-teal" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Kimberley Process Certification</h3>
+                      <h3 className="font-semibold mb-1">Process Certification</h3>
                       <p className="text-sm text-gem-charcoal/70">
-                        Full compliance with the Kimberley Process, ensuring all our diamonds are 
+                        Full compliance with the Kimberley Process, ensuring all our Gem Stones are 
                         conflict-free and traded with legitimate sources.
                       </p>
                     </div>

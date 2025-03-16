@@ -4,7 +4,9 @@ import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Diamond, Shield, Sun, Droplet, Zap, Heart } from 'lucide-react';
+
+import { Diamond, Heart, Droplet, Shield, Sun, Zap, Bolt, Globe } from "lucide-react";
+
 
 interface GemstoneInfo {
   name: string;
@@ -19,88 +21,116 @@ interface GemstoneInfo {
 
 const gemstones: GemstoneInfo[] = [
   {
-    name: "Diamond",
-    icon: <Diamond className="w-6 h-6" />,
-    color: "Colorless, Yellow, Brown, Blue, Green, Pink",
-    hardness: "10 (Mohs scale)",
-    origin: "South Africa, Russia, Botswana, Canada",
-    description: "Diamonds are renowned for their exceptional hardness and brilliance. Formed under extreme pressure deep within the Earth's mantle, they are the hardest natural material known.",
-    properties: [
-      "Symbol of enduring love and commitment",
-      "Associated with clarity and strength",
-      "Believed to bring balance and abundance"
-    ],
-    image: "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?q=80&w=1933&auto=format&fit=crop"
-  },
-  {
-    name: "Ruby",
-    icon: <Heart className="w-6 h-6" />,
-    color: "Red",
-    hardness: "9 (Mohs scale)",
-    origin: "Myanmar, Thailand, Sri Lanka, Madagascar",
-    description: "Rubies are precious gemstones known for their vibrant red color, which comes from the presence of chromium. The most valuable rubies are a deep 'pigeon blood' red with a slight hint of blue.",
-    properties: [
-      "Symbol of passion, protection, and prosperity",
-      "Associated with the heart and blood",
-      "Believed to stimulate energy and vitality"
-    ],
-    image: "https://images.unsplash.com/photo-1517613367530-d0a7375a0b7a?q=80&w=2066&auto=format&fit=crop"
-  },
-  {
-    name: "Sapphire",
-    icon: <Droplet className="w-6 h-6" />,
-    color: "Blue, but also found in nearly all colors except red",
-    hardness: "9 (Mohs scale)",
-    origin: "Sri Lanka, Madagascar, Australia, Thailand",
-    description: "While most famous for their deep blue color, sapphires naturally occur in a rainbow of hues, including pink, yellow, green, and colorless. They are composed of the mineral corundum.",
-    properties: [
-      "Symbol of wisdom, loyalty, and nobility",
-      "Associated with focus and mental clarity",
-      "Traditionally believed to protect against evil"
-    ],
-    image: "https://images.unsplash.com/photo-1546567474-0589686aabf8?q=80&w=2066&auto=format&fit=crop"
-  },
-  {
-    name: "Emerald",
-    icon: <Shield className="w-6 h-6" />,
-    color: "Green",
+    name: "Aquamarine",
+    icon: <Droplet className="w-6 h-6" />, 
+    color: "Light blue to bluish-green",
     hardness: "7.5-8 (Mohs scale)",
-    origin: "Colombia, Zambia, Brazil, Zimbabwe",
-    description: "Emeralds are beryl crystals colored green by trace amounts of chromium and vanadium. Their rich green color has been treasured for thousands of years, with some of the finest specimens coming from Colombia.",
+    origin: "Shakiso, Oromia, Ethiopia",
+    description: "Aquamarine is a variety of beryl known for its stunning blue to greenish-blue hues, reminiscent of seawater. It has been cherished for centuries as a symbol of tranquility and courage.",
     properties: [
-      "Symbol of rebirth, wisdom, and growth",
-      "Associated with the heart chakra",
-      "Believed to enhance memory and intelligence"
+      "Symbol of serenity and courage",
+      "Associated with the throat chakra",
+      "Believed to promote clear communication and calmness"
     ],
-    image: "https://images.unsplash.com/photo-1551891887-b35761959110?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    name: "Amethyst",
-    icon: <Zap className="w-6 h-6" />,
-    color: "Purple to Violet",
-    hardness: "7 (Mohs scale)",
-    origin: "Brazil, Uruguay, Zambia, Russia",
-    description: "Amethyst is a variety of quartz characterized by its distinct purple color, which ranges from pale lilac to deep purple. The color comes from iron impurities and exposure to natural radiation.",
-    properties: [
-      "Symbol of clarity, sobriety, and calmness",
-      "Associated with the crown chakra",
-      "Believed to enhance intuition and spiritual awareness"
-    ],
-    image: "https://images.unsplash.com/photo-1589385953111-af07cbba3c70?q=80&w=2070&auto=format&fit=crop"
+    image: "/lovable-uploads/AQUAMARINE.jpg"
   },
   {
     name: "Opal",
     icon: <Sun className="w-6 h-6" />,
     color: "Multicolored with play of colors",
     hardness: "5.5-6.5 (Mohs scale)",
-    origin: "Australia, Ethiopia, Mexico, Brazil",
-    description: "Opals are unique among gemstones for their ability to diffract light, producing a spectacular play of colors. Each opal is one-of-a-kind, with patterns that are never exactly duplicated.",
+    origin: "Wollo (Welo) Zone, Amhara Region, Ethiopia",
+    description: "Ethiopian opals are admired for their remarkable play-of-color, displaying an array of spectral hues. These gems are believed to inspire creativity and emotional expression.",
     properties: [
-      "Symbol of hope, purity, and truth",
-      "Associated with creativity and spontaneity",
-      "Believed to enhance cosmic consciousness"
+      "Symbol of inspiration and spontaneity",
+      "Associated with emotional balance",
+      "Believed to amplify imagination and creativity"
     ],
-    image: "https://images.unsplash.com/photo-1563699182-58375278da5d?q=80&w=2066&auto=format&fit=crop"
+    image: "/lovable-uploads/OPAL.jpg"
+  },
+  {
+    name: "Emerald",
+    icon: <Shield className="w-6 h-6" />,
+    color: "Green",
+    hardness: "7.5-8 (Mohs scale)",
+    origin: "Sebeta, Oromia, Ethiopia",
+    description: "Emeralds from Ethiopia exhibit a deep green hue with remarkable clarity. These gemstones symbolize growth, wisdom, and renewal, making them highly valued.",
+    properties: [
+      "Symbol of wisdom and renewal",
+      "Associated with the heart chakra",
+      "Believed to promote love and intelligence"
+    ],
+    image: "/lovable-uploads/EMERALD.jpg"
+  },
+  {
+    name: "Sapphire",
+    icon: <Diamond className="w-6 h-6" />,
+    color: "Blue, but also found in other colors",
+    hardness: "9 (Mohs scale)",
+    origin: "Tigray, Ethiopia",
+    description: "Ethiopian sapphires are admired for their deep blue tones and durability. Traditionally, they are associated with wisdom and spiritual enlightenment.",
+    properties: [
+      "Symbol of wisdom and clarity",
+      "Associated with mental focus",
+      "Believed to protect against negative energies"
+    ],
+    image: "/lovable-uploads/SAPHIER.jpg"
+  },
+  {
+    name: "Ruby",
+    icon: <Heart className="w-6 h-6" />,
+    color: "Red",
+    hardness: "9 (Mohs scale)",
+    origin: "Guji Zone, Oromia, Ethiopia",
+    description: "Ethiopian rubies are prized for their intense red color and brilliance. They symbolize passion, vitality, and protection, often associated with strong emotions.",
+    properties: [
+      "Symbol of passion and strength",
+      "Associated with the root chakra",
+      "Believed to enhance energy and confidence"
+    ],
+    image: "/lovable-uploads/RUBY.jpg"
+  },
+  {
+    name: "Tourmaline",
+    icon: <Zap className="w-6 h-6" />,
+    color: "Multicolored, including green, pink, and black",
+    hardness: "7-7.5 (Mohs scale)",
+    origin: "Kenticha, Oromia, Ethiopia",
+    description: "Tourmaline is known for its vibrant colors and unique ability to generate an electrical charge. It is believed to promote grounding and energy balance.",
+    properties: [
+      "Symbol of protection and grounding",
+      "Associated with energy purification",
+      "Believed to enhance vitality and emotional stability"
+    ],
+    image: "/lovable-uploads/TOURMALINE BLUE.jpg"
+  },
+  {
+    name: "Lithium Ore",
+    icon: <Bolt className="w-6 h-6" />,
+    color: "Grayish-white to pink",
+    hardness: "2.5-3.5 (Mohs scale)",
+    origin: "Afar Region, Ethiopia",
+    description: "Lithium ore is an essential mineral used in modern battery production. It is a valuable resource for the future of clean energy and technological advancements.",
+    properties: [
+      "Essential for energy storage",
+      "Used in battery and technology applications",
+      "Believed to promote stability and balance"
+    ],
+    image: "/lovable-uploads/LITHIUM ORE.jpg"
+  },
+  {
+    name: "Tantalum",
+    icon: <Globe className="w-6 h-6" />,
+    color: "Steel-gray",
+    hardness: "6-6.5 (Mohs scale)",
+    origin: "Southern Nations, Ethiopia",
+    description: "Tantalum is a rare, highly corrosion-resistant metal used in electronics and aerospace applications. It plays a crucial role in modern technology.",
+    properties: [
+      "Highly corrosion-resistant",
+      "Used in advanced electronics and aerospace",
+      "Believed to enhance durability and conductivity"
+    ],
+    image: "/lovable-uploads/TANTHULUM.jpg"
   }
 ];
 

@@ -19,68 +19,68 @@ interface Product {
 const products: Product[] = [
   {
     id: "1",
-    name: "Emerald Cut Diamond",
-    category: "Diamond",
+    name: "Ethiopian Lithium Ore",
+    category: "Lithium Ore",
     price: "$3,999",
-    image: "https://images.unsplash.com/photo-1585149869791-8eeec5729d84?q=80&w=2970&auto=format&fit=crop",
+    image: "/lovable-uploads/LITHIUM ORE.jpg",
     isFeatured: true
   },
   {
     id: "2",
-    name: "Ruby Oval Ring",
-    category: "Ruby",
+    name: "Ethiopian Tantalum",
+    category: "Tantalum",
     price: "$2,499",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop",
+    image: "/lovable-uploads/TANTHULUM.jpg",
     isNew: true
   },
   {
     id: "3",
-    name: "Sapphire Pendant",
-    category: "Sapphire",
+    name: "Ethiopian Ruby",
+    category: "Ruby",
     price: "$1,899",
-    image: "https://images.unsplash.com/photo-1600003263760-95b25a0ece9a?q=80&w=1932&auto=format&fit=crop",
+    image: "/lovable-uploads/RUBY.jpg",
   },
   {
     id: "4",
-    name: "Amethyst Earrings",
-    category: "Amethyst",
+    name: "Ethiopian Sapphire",
+    category: "Sapphire",
     price: "$899",
-    image: "https://images.unsplash.com/photo-1584654573502-96701f1fac11?q=80&w=2070&auto=format&fit=crop",
+    image: "/lovable-uploads/SAPHIER.jpg",
     isNew: true
   },
   {
     id: "5",
-    name: "Emerald Silver Ring",
-    category: "Emerald",
+    name: "Ethiopian Tourmaline",
+    category: "Tourmaline",
     price: "$1,299",
-    image: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?q=80&w=1974&auto=format&fit=crop",
+    image: "/lovable-uploads/TOURMALINE BLUE.jpg",
     isFeatured: true
   },
   {
     id: "6",
-    name: "Tanzanite Necklace",
-    category: "Tanzanite",
+    name: "Ethiopian Emerald",
+    category: "Emerald",
     price: "$2,199",
-    image: "https://images.unsplash.com/photo-1608042314453-ae338d80c427?q=80&w=1974&auto=format&fit=crop",
+    image: "/lovable-uploads/EMERALD.jpg",
   },
   {
     id: "7",
-    name: "Opal Bracelet",
+    name: "Ethiopian Opal",
     category: "Opal",
     price: "$1,499",
-    image: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?q=80&w=1980&auto=format&fit=crop",
+    image: "/lovable-uploads/OPAL.jpg",
   },
   {
     id: "8",
-    name: "Aquamarine Stud",
+    name: "Ethiopian Aquamarine Stud",
     category: "Aquamarine",
     price: "$799",
-    image: "https://images.unsplash.com/photo-1583937443566-6fe1a1c6e400?q=80&w=2070&auto=format&fit=crop",
+    image: "/lovable-uploads/AQUAMARINE.jpg",
     isNew: true
   }
 ];
 
-const categories = ["All", "Diamond", "Ruby", "Sapphire", "Emerald", "Amethyst", "Opal", "Aquamarine", "Tanzanite"];
+const categories = ["All", "Aquamarine", "Opal", "Emerald", "Tourmaline", "Sapphire", "Ruby", "Tantalum", "Lithium Ore"];
 
 const ProductShowcase = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -113,7 +113,7 @@ const ProductShowcase = () => {
             "text-lg text-gem-charcoal/70 max-w-2xl mx-auto mb-8 transition-all duration-1000 delay-100 transform",
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
-            Discover our handpicked selection of the finest gemstones from around the world
+            Discover our handpicked selection of the finest gemstones from around Ethiopia
           </p>
           
           {/* Category Filter */}

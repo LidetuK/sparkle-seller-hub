@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ShoppingCart, User, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,30 +47,31 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <NavLink to="/" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              Home
-            </NavLink>
-            <NavLink to="/products" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              Products
-            </NavLink>
-            <NavLink to="/gemstone-guide" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              Gemstone Guide
-            </NavLink>
-            <NavLink to="/blog" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              Blog
-            </NavLink>
-            <NavLink to="/testimonials" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              Testimonials
-            </NavLink>
-            <NavLink to="/about-us" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              About Us
-            </NavLink>
-            <NavLink to="/contact" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              Contact
-            </NavLink>
-            <NavLink to="/faq" className={({isActive}) => cn('nav-link', isActive && 'nav-link-active')}>
-              FAQ
-            </NavLink>
+          <NavLink to="/" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  Home
+</NavLink>
+<NavLink to="/about-us" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  About Us
+</NavLink>
+<NavLink to="/products" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  Products
+</NavLink>
+<NavLink to="/gemstone-guide" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  Gemstone Guide
+</NavLink>
+<NavLink to="/testimonials" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  Testimonials
+</NavLink>
+<NavLink to="/faq" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  FAQ
+</NavLink>
+<NavLink to="/blog" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  Blog
+</NavLink>
+<NavLink to="/contact" className={({ isActive }) => cn('nav-link', isActive && 'nav-link-active')}>
+  Contact
+</NavLink>
+
           </nav>
 
           {/* Right Side Icons */}
@@ -100,75 +103,87 @@ const Header = () => {
         isMenuOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <nav className="flex flex-col space-y-6 py-8">
-          <NavLink 
-            to="/" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Home
-          </NavLink>
-          <NavLink 
-            to="/products" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Products
-          </NavLink>
-          <NavLink 
-            to="/gemstone-guide" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Gemstone Guide
-          </NavLink>
-          <NavLink 
-            to="/blog" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Blog
-          </NavLink>
-          <NavLink 
-            to="/testimonials" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Testimonials
-          </NavLink>
-          <NavLink 
-            to="/about-us" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About Us
-          </NavLink>
-          <NavLink 
-            to="/contact" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </NavLink>
-          <NavLink 
-            to="/faq" 
-            className={({isActive}) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            FAQ
-          </NavLink>
+        <NavLink 
+  to="/" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  Home
+</NavLink>
+<NavLink 
+  to="/about-us" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  About Us
+</NavLink>
+<NavLink 
+  to="/products" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  Products
+</NavLink>
+<NavLink 
+  to="/gemstone-guide" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  Gemstone Guide
+</NavLink>
+<NavLink 
+  to="/testimonials" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  Testimonials
+</NavLink>
+<NavLink 
+  to="/faq" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  FAQ
+</NavLink>
+<NavLink 
+  to="/blog" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  Blog
+</NavLink>
+<NavLink 
+  to="/contact" 
+  className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+  onClick={() => setIsMenuOpen(false)}
+>
+  Contact
+</NavLink>
+
         </nav>
 
         <div className="flex items-center space-x-4 mt-8 border-t border-gray-100 pt-8">
-          <button className="p-2 rounded-full bg-gray-100">
-            <Search size={20} className="text-gem-charcoal" />
-          </button>
-          <button className="p-2 rounded-full bg-gray-100">
-            <User size={20} className="text-gem-charcoal" />
-          </button>
-          <button className="p-2 rounded-full bg-gray-100">
-            <ShoppingCart size={20} className="text-gem-charcoal" />
-          </button>
-        </div>
+  <button className="p-2 rounded-full bg-gray-100">
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+      <FaFacebook size={20} className="text-gem-charcoal" />
+    </a>
+  </button>
+  <button className="p-2 rounded-full bg-gray-100">
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <FaInstagram size={20} className="text-gem-charcoal" />
+    </a>
+  </button>
+  <button className="p-2 rounded-full bg-gray-100">
+    <a href="https://wa.me/+251920537777" target="_blank" rel="noopener noreferrer">
+      <FaWhatsapp size={20} className="text-gem-charcoal" />
+    </a>
+  </button>
+  <button className="p-2 rounded-full bg-gray-100">
+    <a href="https://t.me/JOHNESKU22" target="_blank" rel="noopener noreferrer">
+      <FaTelegram size={20} className="text-gem-charcoal" />
+    </a>
+  </button>
+</div>
       </div>
     </header>
   );

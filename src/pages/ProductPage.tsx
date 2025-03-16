@@ -12,7 +12,6 @@ interface Product {
   id: string;
   name: string;
   category: string;
-  price: string;
   image: string;
   description: string;
   isNew?: boolean;
@@ -22,108 +21,70 @@ interface Product {
 const products: Product[] = [
   {
     id: "1",
-    name: "Emerald Cut Diamond",
-    category: "Diamond",
-    price: "$3,999",
-    image: "https://images.unsplash.com/photo-1585149869791-8eeec5729d84?q=80&w=2970&auto=format&fit=crop",
-    description: "A stunning emerald cut diamond set in 18k white gold. This elegant piece features a 1.5-carat diamond of exceptional clarity and color.",
-    isFeatured: true
+    name: "Ethiopian Lithium Ore",
+    category: "Lithium Ore",
+    image: "/lovable-uploads/LITHIUM ORE.jpg",
+    isFeatured: true,
+    description: "Ethiopian lithium ore is a key resource for the growing battery and renewable energy industries, powering electric vehicles and modern electronics.",
   },
   {
     id: "2",
-    name: "Ruby Oval Ring",
-    category: "Ruby",
-    price: "$2,499",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1974&auto=format&fit=crop",
-    description: "A vibrant ruby oval ring featuring a 2-carat natural ruby surrounded by brilliant-cut diamonds in a halo setting.",
-    isNew: true
+    name: "Ethiopian Tantalum",
+    category: "Tantalum",
+    image: "/lovable-uploads/TANTHULUM.jpg",
+    isNew: true,
+    description: "Ethiopian tantalum is a rare and valuable metal essential for high-tech industries, including electronics, aerospace, and medical devices.",
   },
   {
     id: "3",
-    name: "Sapphire Pendant",
-    category: "Sapphire",
-    price: "$1,899",
-    image: "https://images.unsplash.com/photo-1600003263760-95b25a0ece9a?q=80&w=1932&auto=format&fit=crop",
-    description: "An elegant sapphire pendant with a deep blue 1.5-carat sapphire, suspended from a delicate 18k white gold chain."
+    name: "Ethiopian Ruby",
+    category: "Ruby",
+    image: "/lovable-uploads/RUBY.jpg",
+    description: "Ethiopian rubies are known for their rich red hue and impressive transparency, making them a valuable addition to fine jewelry collections."
   },
   {
     id: "4",
-    name: "Amethyst Earrings",
-    category: "Amethyst",
-    price: "$899",
-    image: "https://images.unsplash.com/photo-1584654573502-96701f1fac11?q=80&w=2070&auto=format&fit=crop",
-    description: "Beautiful drop earrings featuring 3-carat amethysts in a vintage-inspired setting with small diamond accents.",
-    isNew: true
+    name: "Ethiopian Sapphire",
+    category: "Sapphire",
+    image: "/lovable-uploads/SAPHIER.jpg",
+    isNew: true,
+    description: "Ethiopian sapphires come in stunning shades of blue, yellow, and pink, offering exceptional brilliance and affordability."
   },
   {
     id: "5",
-    name: "Emerald Silver Ring",
-    category: "Emerald",
-    price: "$1,299",
-    image: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?q=80&w=1974&auto=format&fit=crop",
-    description: "A classic emerald ring featuring a 1-carat Colombian emerald set in sterling silver with pavé diamond accents.",
-    isFeatured: true
+    name: "Ethiopian Tourmaline",
+    category: "Tourmaline",
+    image: "/lovable-uploads/TOURMALINE BLUE.jpg",
+    isFeatured: true,
+    description: "Ethiopian tourmaline is a versatile gemstone available in stunning shades of green, pink, and bi-color variations, ideal for unique and elegant jewelry."
   },
   {
     id: "6",
-    name: "Tanzanite Necklace",
-    category: "Tanzanite",
-    price: "$2,199",
-    image: "https://images.unsplash.com/photo-1608042314453-ae338d80c427?q=80&w=1974&auto=format&fit=crop",
-    description: "A luxurious tanzanite necklace featuring a rare 2-carat tanzanite gemstone with a trillion cut, set in 14k rose gold."
+    name: "Ethiopian Emerald",
+    category: "Emerald",
+    image: "/lovable-uploads/EMERALD.jpg",
+    description: "Ethiopian emeralds are prized for their rich green color and remarkable clarity, offering a cost-effective alternative to traditional emeralds."
   },
   {
     id: "7",
-    name: "Opal Bracelet",
+    name: "Ethiopian Opal",
     category: "Opal",
-    price: "$1,499",
-    image: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?q=80&w=1980&auto=format&fit=crop",
-    description: "A stunning bracelet featuring Australian opals alternating with small diamonds in a 14k yellow gold setting."
+    image: "/lovable-uploads/OPAL.jpg",
+    description: "Ethiopian opals are famous for their mesmerizing play-of-color, displaying vibrant flashes of red, green, blue, and yellow."
   },
   {
     id: "8",
-    name: "Aquamarine Stud",
+    name: "Ethiopian Aquamarine Stud",
     category: "Aquamarine",
-    price: "$799",
-    image: "https://images.unsplash.com/photo-1583937443566-6fe1a1c6e400?q=80&w=2070&auto=format&fit=crop",
-    description: "Elegant stud earrings featuring 1-carat aquamarines in a minimalist platinum setting, perfect for everyday wear.",
-    isNew: true
-  },
-  {
-    id: "9",
-    name: "Morganite Rose Gold Ring",
-    category: "Morganite",
-    price: "$1,599",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1470&auto=format&fit=crop",
-    description: "A romantic ring featuring a cushion-cut morganite gemstone in a rose gold setting with a diamond halo."
-  },
-  {
-    id: "10",
-    name: "Peridot Drop Earrings",
-    category: "Peridot",
-    price: "$899",
-    image: "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?q=80&w=1480&auto=format&fit=crop",
-    description: "Vibrant peridot drop earrings featuring pear-shaped peridots suspended from a delicate 14k gold chain."
-  },
-  {
-    id: "11",
-    name: "Tourmaline Cocktail Ring",
-    category: "Tourmaline",
-    price: "$1,799",
-    image: "https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?q=80&w=1470&auto=format&fit=crop",
-    description: "A statement cocktail ring featuring a large watermelon tourmaline surrounded by small diamonds in a unique setting."
-  },
-  {
-    id: "12",
-    name: "Pearl and Diamond Necklace",
-    category: "Pearl",
-    price: "$2,299",
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1470&auto=format&fit=crop",
+    image: "/lovable-uploads/AQUAMARINE.jpg",
+    isNew: true,
     description: "An elegant necklace featuring a large South Sea pearl pendant suspended from a diamond-encrusted chain."
   }
 ];
 
-const categories = ["All", "Diamond", "Ruby", "Sapphire", "Emerald", "Amethyst", "Opal", "Aquamarine", "Tanzanite", "Morganite", "Peridot", "Tourmaline", "Pearl"];
+  
+
+const categories = ["All", "Aquamarine", "Opal", "Emerald", "Tourmaline", "Sapphire", "Ruby", "Tantalum", "Lithium Ore"];
 
 const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -163,7 +124,7 @@ const ProductPage = () => {
               "text-lg text-gem-charcoal/70 max-w-2xl mx-auto mb-8 transition-all duration-1000 delay-100 transform",
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              Explore our exquisite collection of premium gemstones and jewelry
+              Explore our exquisite collection of premium gemstones
             </p>
             
             {/* Category Filter */}
@@ -243,7 +204,6 @@ const ProductPage = () => {
                 <div className="text-center">
                   <span className="text-sm text-gem-charcoal/60 mb-1 block">{product.category}</span>
                   <h3 className="text-lg font-medium mb-1">{product.name}</h3>
-                  <p className="text-lg font-semibold text-gem-charcoal">{product.price}</p>
                   <p className="mt-2 text-sm text-gem-charcoal/70 line-clamp-2">{product.description}</p>
                 </div>
               </div>

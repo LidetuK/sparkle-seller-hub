@@ -23,100 +23,82 @@ interface Review {
 const reviews: Review[] = [
   {
     id: "1",
-    name: "Jennifer K.",
-    location: "New York, USA",
+    name: "Dr John NEUHAUS",
+    location: "USA 🇺🇸",
     rating: 5,
-    date: "October 15, 2023",
-    title: "Absolutely Stunning Diamond Engagement Ring",
-    content: "I can't express how thrilled I am with my purchase from ONEX. The diamond engagement ring I received exceeded all my expectations. The craftsmanship is impeccable, and the diamond's brilliance is breathtaking. The entire shopping experience was seamless, and their customer service was exceptional. My fiancée was speechless when she saw it!",
-    productName: "Emerald Cut Diamond Ring",
-    productImage: "https://images.unsplash.com/photo-1585149869791-8eeec5729d84?q=80&w=2970&auto=format&fit=crop",
+    date: "October 15, 2024",
+    title: "Absolutely Stunning Ethiopian Ruby Engagement Ring",
+    content: "I can't express how thrilled I am with my purchase of Ethiopian Ruby from ONEX. The gemstone exceeded all my expectations. The craftsmanship is impeccable, and the ruby's brilliance is breathtaking. The entire shopping experience was seamless, and their customer service was exceptional. My fiancée was speechless when she saw it!",
     verified: true
   },
   {
     id: "2",
-    name: "Robert T.",
-    location: "London, UK",
+    name: "Abdi H.",
+    location: "Addis Ababa, Ethiopia",
     rating: 5,
-    date: "September 3, 2023",
-    title: "Exceptional Quality and Service",
-    content: "I purchased a sapphire pendant for my wife's birthday, and I couldn't be happier with my choice. The gemstone's color is rich and vibrant, exactly as pictured on the website. The packaging was elegant and made for a perfect presentation. ONEX's attention to detail is remarkable, and their team was incredibly helpful in helping me select the right piece.",
-    productName: "Sapphire Pendant",
-    productImage: "https://images.unsplash.com/photo-1600003263760-95b25a0ece9a?q=80&w=1932&auto=format&fit=crop",
-    avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+    date: "September 3, 2024",
+    title: "Exceptional Quality of Ethiopian Tantalum",
+    content: "I purchased Ethiopian Tantalum for my project, and I couldn't be happier with the quality. The metal's strength and resilience are remarkable, exactly as described on the website. ONEX's attention to detail in sourcing such rare material is impressive, and their team was very helpful throughout the process.",
     verified: true
   },
   {
     id: "3",
-    name: "Sophia L.",
-    location: "Toronto, Canada",
+    name: "Mekdes A.",
+    location: "Gondar, Ethiopia",
     rating: 4,
-    date: "August 17, 2023",
-    title: "Beautiful Ruby Earrings, Minor Shipping Delay",
-    content: "The ruby earrings I ordered are absolutely beautiful and exactly what I was looking for. The color is vivid, and they catch the light perfectly. I'm deducting one star only because there was a delay in shipping that wasn't communicated proactively. However, when I reached out, customer service was responsive and resolved the issue quickly. Overall, I'm very satisfied with my purchase.",
-    productName: "Ruby Earrings",
-    verified: false
+    date: "August 17, 2024",
+    title: "Beautiful Ethiopian Sapphire, Minor Shipping Delay",
+    content: "The Ethiopian Sapphire I ordered is absolutely beautiful, and it's just what I was looking for. The color is vivid, and it sparkles in the light. I'm deducting one star due to a shipping delay that wasn't communicated in advance. However, the customer service team quickly resolved the issue. I'm still very satisfied with my purchase.",
+    verified: true
   },
   {
     id: "4",
-    name: "Michael D.",
-    location: "Sydney, Australia",
+    name: "Tewodros G.",
+    location: "Bahir Dar, Ethiopia",
     rating: 5,
-    date: "July 22, 2023",
-    title: "Heirloom Quality Emerald Ring",
-    content: "I purchased an emerald ring as an anniversary gift, and it's truly a piece that will become a family heirloom. The emerald's deep green color is mesmerizing, and the setting is both elegant and secure. The certification provided gives me confidence in the authenticity and quality of the gemstone. ONEX has earned a customer for life!",
-    productName: "Emerald Silver Ring",
-    productImage: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?q=80&w=1974&auto=format&fit=crop",
-    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+    date: "July 22, 2024",
+    title: "Heirloom Quality Ethiopian Tourmaline Ring",
+    content: "I purchased an Ethiopian Tourmaline ring, and it's truly a piece that will become a family heirloom. The tourmaline's colors are mesmerizing, and the setting is elegant and secure. The certification gives me confidence in the authenticity of this remarkable gemstone. ONEX has earned a customer for life!",
     verified: true
   },
   {
     id: "5",
-    name: "Emma W.",
-    location: "Paris, France",
+    name: "Saba W.",
+    location: "Dire Dawa, Ethiopia",
     rating: 5,
-    date: "June 10, 2023",
-    title: "Exquisite Craftsmanship and Fast Delivery",
-    content: "The amethyst bracelet I ordered arrived quickly and was even more beautiful in person than in the photos. The craftsmanship is exquisite, with attention paid to every detail. I've received countless compliments whenever I wear it. The piece was also packaged beautifully, making it feel like a true luxury experience from start to finish.",
-    productName: "Amethyst Bracelet",
-    avatar: "https://randomuser.me/api/portraits/women/33.jpg",
+    date: "June 10, 2025",
+    title: "Exquisite Craftsmanship and Fast Delivery of Ethiopian Emerald",
+    content: "The Ethiopian Emerald necklace I ordered arrived quickly and was even more beautiful in person than in the photos. The craftsmanship is exquisite, with attention paid to every detail. I've received countless compliments whenever I wear it. The piece was also packaged beautifully, making it feel like a true luxury experience from start to finish.",
     verified: true
   },
   {
     id: "6",
-    name: "David H.",
-    location: "Chicago, USA",
+    name: "Tesfaye B.",
+    location: "Mekelle, Ethiopia",
     rating: 5,
-    date: "May 5, 2023",
-    title: "Outstanding Custom Design Experience",
-    content: "I worked with ONEX to create a custom tanzanite necklace for my wife's 40th birthday. The design team was patient, creative, and truly listened to what I wanted. The final piece exceeded my expectations, and my wife was moved to tears when she opened it. The quality of the gemstone and craftsmanship is outstanding. Well worth the investment for such a special occasion.",
-    productName: "Custom Tanzanite Necklace",
-    productImage: "https://images.unsplash.com/photo-1608042314453-ae338d80c427?q=80&w=1974&auto=format&fit=crop",
+    date: "May 5, 2025",
+    title: "Outstanding Custom Ethiopian Opal Design",
+    content: "I worked with ONEX to create a custom Ethiopian Opal necklace for my wife’s birthday. The design team was patient, creative, and truly listened to what I wanted. The final piece exceeded my expectations, and my wife was overjoyed when she opened it. The quality of the opal and craftsmanship is outstanding. Worth every penny for such a special gift.",
     verified: true
   },
   {
     id: "7",
-    name: "Lisa J.",
-    location: "Berlin, Germany",
+    name: "Rahel F.",
+    location: "Jimma, Ethiopia",
     rating: 4,
-    date: "April 18, 2023",
-    title: "Beautiful Opal Ring, Sizing Issue Resolved",
-    content: "I ordered an opal ring that was absolutely stunning - the play of colors is mesmerizing. Initially, there was an issue with sizing, but customer service was quick to offer a resize at no additional cost. The process was smooth, and I received my perfectly sized ring back within a week. I'm very happy with both the product and the service recovery.",
-    productName: "Opal Ring",
-    productImage: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?q=80&w=1980&auto=format&fit=crop",
-    avatar: "https://randomuser.me/api/portraits/women/72.jpg",
+    date: "April 18, 2025",
+    title: "Beautiful Ethiopian Aquamarine Studs, Sizing Issue Resolved",
+    content: "I ordered a pair of Ethiopian Aquamarine Studs, and they are absolutely stunning. The play of colors in the aquamarine is mesmerizing. Initially, there was a minor issue with the sizing, but customer service offered a quick solution with no extra charge. I received my perfectly sized studs in less than a week. I’m very happy with both the product and the service recovery.",
     verified: true
   },
   {
     id: "8",
-    name: "James B.",
-    location: "Singapore",
+    name: "Yonas M.",
+    location: "Hawassa, Ethiopia",
     rating: 5,
-    date: "March 7, 2023",
-    title: "Exceptional Value and Quality",
-    content: "I researched extensively before purchasing a pair of aquamarine earrings from ONEX, comparing prices and quality across multiple retailers. ONEX offered the best value by far, without compromising on quality. The earrings arrived in perfect condition with proper certification, and they look even more vibrant in person. I'll definitely be returning for future purchases.",
-    productName: "Aquamarine Stud Earrings",
-    productImage: "https://images.unsplash.com/photo-1583937443566-6fe1a1c6e400?q=80&w=2070&auto=format&fit=crop",
+    date: "March 7, 2025",
+    title: "Exceptional Value and Quality of Ethiopian Lithium Ore",
+    content: "I researched extensively before purchasing Ethiopian Lithium Ore from ONEX, comparing prices and quality across multiple retailers. ONEX offered the best value without compromising on quality. The ore arrived in perfect condition with proper certification, and it’s even more vibrant in person. I’ll definitely return for future purchases.",
     verified: false
   }
 ];
@@ -169,7 +151,7 @@ const TestimonialsPage = () => {
               "text-lg text-gem-charcoal/70 max-w-2xl mx-auto transition-all duration-1000 delay-100 transform",
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              Read what our customers have to say about their experiences with ONEX
+              Read what our customers have to say about their experiences with ONEXONE
             </p>
           </div>
           
@@ -344,10 +326,13 @@ const TestimonialsPage = () => {
               Have you purchased from ONEX? We'd love to hear about your experience. 
               Your feedback helps us improve and assists other customers in making informed decisions.
             </p>
-            <button className="gem-button-primary inline-flex items-center gap-2">
-              <MessageSquare className="w-4 h-4" />
-              Write a Review
-            </button>
+            <a href="http://localhost:8080/contact">
+  <button className="gem-button-primary inline-flex items-center gap-2">
+    <MessageSquare className="w-4 h-4" />
+    Write a Review
+  </button>
+</a>
+
           </div>
         </div>
       </main>

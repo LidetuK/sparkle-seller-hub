@@ -8,7 +8,6 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
-  bio: string;
   email?: string;
   instagram?: string;
   linkedin?: string;
@@ -17,40 +16,36 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "David Mitchell",
-    role: "Founder & Lead Gemologist",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-    bio: "With over 20 years of experience in gemology, David leads our team with passion and expertise.",
-    email: "david@onexgems.com",
-    instagram: "davidonexgems",
-    linkedin: "davidmitchell"
+    name: "Mr Yohannes Gézahegn",
+    role: "Founder, CEO & Lead Gemologist",
+    image: "/lovable-uploads/Yohannes Gezahegn.jpg",
+    email: "johnesku22@gmail.com",
+    instagram: "/",
+    linkedin: "/"
   },
   {
     id: 2,
-    name: "Sophia Chen",
-    role: "Senior Gemstone Specialist",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-    bio: "Sophia specializes in colored gemstones and has traveled the world to source the finest specimens.",
-    email: "sophia@onexgems.com",
-    instagram: "sophiaonexgems",
-    linkedin: "sophiachen"
+    name: "Wondwosen Mulugeta",
+    role: "System Administrator &MULTIMEDIA Manager",
+    image: "/lovable-uploads/WONDWOSEN.jpg",
+    email: "Wondwosen Mulugeta@gmail.com",
+    instagram: "/",
+    linkedin: "/"
   },
   {
     id: 3,
-    name: "Marcus Johnson",
-    role: "Diamond Expert",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
-    bio: "Marcus has unparalleled knowledge of diamond assessment and certification processes.",
-    email: "marcus@onexgems.com",
-    instagram: "marcusonexgems",
-    linkedin: "marcusjohnson"
+    name: "Dr John Neuhaus",
+    role: "Head of Procurement and Quality Control ( SENIOR GEOLOGIST)",
+    image: "/lovable-uploads/Dr John Neuhaus.jpg",
+    email: "Dr John Neuhaus@gmail.com",
+    instagram: "/",
+    linkedin: "/"
   },
   {
     id: 4,
-    name: "Priya Sharma",
-    role: "Jewelry Designer",
-    image: "https://randomuser.me/api/portraits/women/67.jpg",
-    bio: "Priya creates stunning custom designs that showcase our gemstones in unique settings.",
+    name: "Frehiwot Mulugeta",
+    role: "Head of Sales and Marketing (SENIOR ACCOUNTING EXPERT)",
+    image: "/lovable-uploads/Frehiwot Mulugeta.jpg",
     email: "priya@onexgems.com",
     instagram: "priyaonexgems",
     linkedin: "priyasharma"
@@ -140,7 +135,7 @@ const Team = () => {
               <div className="text-center">
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                 <p className="text-gem-red font-medium mb-3">{member.role}</p>
-                <p className="text-gem-charcoal/70">{member.bio}</p>
+                
               </div>
             </div>
           ))}

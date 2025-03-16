@@ -13,21 +13,21 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=1974&auto=format&fit=crop",
+    image: "/lovable-uploads/EMERALD cave copy.jpg",
     title: "Exquisite Gemstones",
     subtitle: "Discover our collection of rare and precious stones",
     buttonText: "Explore Collection",
     buttonLink: "/products"
   },
   {
-    image: "https://images.unsplash.com/photo-1586074744048-ac9aec84ee3a?q=80&w=1974&auto=format&fit=crop",
+    image: "/lovable-uploads/RUBY cave copy.jpg",
     title: "Handcrafted Excellence",
     subtitle: "Each piece carefully selected for its beauty and rarity",
     buttonText: "View Craftsmanship",
     buttonLink: "/about"
   },
   {
-    image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=1780&auto=format&fit=crop",
+    image: "/lovable-uploads/TOURMALINE BLUE cave copy.jpg",
     title: "Ethically Sourced",
     subtitle: "Sustainable practices from mine to market",
     buttonText: "Our Standards",

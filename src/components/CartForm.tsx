@@ -21,7 +21,6 @@ interface CartFormProps {
   product: {
     id: string;
     name: string;
-    price: string;
     image: string;
   };
   onClose: () => void;
@@ -65,8 +64,6 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
           from_name: "ONEX Gems Website",
           to_email: "johnesku22@gmail.com",
           product: product.name,
-          price: product.price,
-          total_price: `${values.quantity} x ${product.price}`,
           ...values
         })
       });
@@ -116,7 +113,6 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
         
         <div className="sm:w-2/3">
           <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-          <p className="text-xl font-semibold text-gem-charcoal mb-4">{product.price}</p>
           <p className="text-sm text-gem-charcoal/70 mb-4">
             This exquisite piece is available for immediate purchase. 
             Please fill out the form below to place your order.
