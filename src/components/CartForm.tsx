@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
+import { DialogTitle } from '@/components/ui/dialog';
 
 interface CartFormProps {
   product: {
@@ -93,6 +94,7 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
 
   return (
     <div className="relative max-h-[90vh] overflow-y-auto p-4 md:p-6">
+      <DialogTitle className="sr-only">Order {product.name}</DialogTitle>
       <button 
         onClick={onClose}
         className="absolute right-4 top-4 p-2 text-gem-charcoal/70 hover:text-gem-charcoal transition-colors bg-gray-100 rounded-full z-10"

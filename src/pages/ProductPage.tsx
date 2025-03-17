@@ -82,14 +82,13 @@ const products: Product[] = [
   }
 ];
 
-  
-
 const categories = ["All", "Aquamarine", "Opal", "Emerald", "Tourmaline", "Sapphire", "Ruby", "Tantalum", "Lithium Ore"];
 
 const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -108,11 +107,16 @@ const ProductPage = () => {
     }
   }, [selectedCategory]);
 
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+    setSelectedProduct(null);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-24 pb-16">
-        <div className="container mx-auto px-6">
+      <main className="flex-grow pt-24 pb-16 w-full">
+        <div className="container mx-auto px-6 max-w-[100%]">
           <div className="text-center mb-16" ref={ref}>
             <h1 className={cn(
               "text-4xl md:text-5xl font-bold mb-4 transition-all duration-1000 transform",
@@ -171,11 +175,17 @@ const ProductPage = () => {
                   
                   {/* Quick actions */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <Dialog>
+                    <Dialog open={dialogOpen && selectedProduct?.id === product.id} onOpenChange={(open) => {
+                      setDialogOpen(open);
+                      if (!open) setSelectedProduct(null);
+                    }}>
                       <DialogTrigger asChild>
                         <button 
                           className="w-full bg-white py-3 rounded-md font-medium shadow-lg hover:bg-white/90 transition-colors duration-200 flex items-center justify-center gap-2"
-                          onClick={() => setSelectedProduct(product)}
+                          onClick={() => {
+                            setSelectedProduct(product);
+                            setDialogOpen(true);
+                          }}
                         >
                           <ShoppingBag className="w-4 h-4" />
                           Add to Cart
@@ -185,7 +195,7 @@ const ProductPage = () => {
                         {selectedProduct && (
                           <CartForm 
                             product={selectedProduct} 
-                            onClose={() => setSelectedProduct(null)} 
+                            onClose={handleDialogClose} 
                           />
                         )}
                       </DialogContent>

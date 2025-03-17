@@ -136,10 +136,10 @@ const TestimonialsPage = () => {
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full">
       <Header />
-      <main className="flex-grow pt-24 pb-16">
-        <div className="container mx-auto px-6">
+      <main className="flex-grow pt-24 pb-16 w-full">
+        <div className="container mx-auto px-6 max-w-[100%]">
           <div className="text-center mb-16" ref={ref}>
             <h1 className={cn(
               "text-4xl md:text-5xl font-bold mb-4 transition-all duration-1000 transform",
