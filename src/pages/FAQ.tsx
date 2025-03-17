@@ -78,10 +78,10 @@ const FAQ = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow pt-24 pb-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-6 text-left">
+          <div className="mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
-            <p className="text-lg text-gem-charcoal/70 max-w-2xl mx-auto">
+            <p className="text-lg text-gem-charcoal/70 max-w-2xl">
               Find answers to common questions about our gemstones, services, and policies
             </p>
           </div>
@@ -120,7 +120,7 @@ const FAQ = () => {
             </Accordion>
             
             {filteredFAQs.length === 0 && (
-              <div className="text-center py-8">
+              <div className="py-8">
                 <p className="text-lg text-gem-charcoal/70">No FAQs found in this category.</p>
               </div>
             )}

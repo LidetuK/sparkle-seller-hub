@@ -7,7 +7,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gem-charcoal text-white pt-20 pb-10">
+    <footer className="bg-gem-charcoal text-white pt-20 pb-10 text-left">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & About */}
@@ -25,23 +25,21 @@ const Footer = () => {
               Discover exquisite gemstones of the highest quality, ethically sourced and expertly crafted.
             </p>
             <div className="flex space-x-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-  <FaInstagram size={20} />
-</a>
-<a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-  <FaFacebook size={20} />
-</a>
-<a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-  <FaTwitter size={20} />
-</a>
-<a href="https://wa.me/+251920537777" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-  <FaWhatsapp size={20} />
-</a>
-<a href="https://t.me/JOHNESKU22" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-  <FaTelegram size={20} />
-</a>
-
-
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+                <FaInstagram size={20} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+                <FaFacebook size={20} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+                <FaTwitter size={20} />
+              </a>
+              <a href="https://wa.me/+251920537777" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+                <FaWhatsapp size={20} />
+              </a>
+              <a href="https://t.me/JOHNESKU22" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+                <FaTelegram size={20} />
+              </a>
             </div>
           </div>
           
@@ -96,7 +94,6 @@ const Footer = () => {
                 <a href="mailto:johnesku22@gmail.com" className="text-white/70 hover:text-white transition-colors duration-200">
                 johnesku22@gmail.com<br/>
                 info@onexonememberplc.com
-
                 </a>
               </li>
             </ul>
@@ -133,7 +130,6 @@ const Footer = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
-            
           </div>
         </div>
       </div>

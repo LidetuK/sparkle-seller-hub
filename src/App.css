@@ -4,7 +4,7 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .logo {
@@ -41,4 +41,10 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Center text for specific components and pages */
+.home-page-content,
+.product-page-content {
+  text-align: center;
 }

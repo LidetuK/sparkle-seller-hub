@@ -8,13 +8,13 @@ const TermsOfService = () => {
     <div className="flex flex-col min-h-screen w-full">
       <Header />
       <main className="flex-grow pt-24 pb-16 w-full">
-        <div className="container mx-auto px-6 max-w-[100%]">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-6 max-w-[100%] text-left">
+          <div className="mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Terms of Service</h1>
-            <p className="text-lg text-gem-charcoal/70 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-gem-charcoal/70 max-w-3xl mb-8">
               Effective Date: 17/03/2025
             </p>
-            <p className="text-lg text-gem-charcoal/70 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-gem-charcoal/70 max-w-3xl mb-8">
               By accessing or using our services, products, and website, you agree to the following Terms of Service.
             </p>
           </div>
