@@ -2,6 +2,13 @@
 import { useInView } from 'react-intersection-observer';
 import { Diamond, BadgeCheck, TruckIcon, Shield } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious 
+} from '@/components/ui/carousel';
 
 const features = [
   {
@@ -23,6 +30,37 @@ const features = [
     icon: TruckIcon,
     title: "Global Market Expertise",
     description: "With deep industry knowledge, we provide competitive solutions and insights in the global gemstone trade."
+  }
+];
+
+const certificates = [
+  {
+    src: "/lovable-uploads/f7185ed2-1154-4593-b878-9469c399aa38.png",
+    alt: "Certificate Analysis - Tantalite Ore"
+  },
+  {
+    src: "/lovable-uploads/ad05fd15-6d33-4ad8-ace9-8a24b9cb0340.png",
+    alt: "Certificate Analysis - Tantalum"
+  },
+  {
+    src: "/lovable-uploads/13339e07-a00c-4257-b4fb-e652bfacf1df.png",
+    alt: "Certificate Analysis - Tantalite"
+  },
+  {
+    src: "/lovable-uploads/0ed458cb-2f5b-472f-907f-016de64c3ca0.png",
+    alt: "Certificate Analysis - Tantalum Sample"
+  },
+  {
+    src: "/lovable-uploads/abbd4b51-a3e0-4476-8680-513287a9cb91.png",
+    alt: "Certificate Analysis - Tantalum Sample 2" 
+  },
+  {
+    src: "/lovable-uploads/e9d61231-66ec-42b7-a1c1-87e6921b7b16.png",
+    alt: "Certificate Analysis - Lithium Ore"
+  },
+  {
+    src: "/lovable-uploads/e7e6e788-4f89-442e-85b2-76aa1b75de32.png",
+    alt: "Certificate Analysis - Lithium"
   }
 ];
 
@@ -76,34 +114,48 @@ const WhyChooseUs = () => {
         </div>
         
         <div className="mt-20 bg-gradient-to-r from-gem-teal/10 via-gem-yellow/10 to-gem-red/10 rounded-2xl overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 p-8 md:p-12">
+          <div className="flex flex-col lg:flex-row items-center">
+            <div className="lg:w-2/5 p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-semibold mb-4">Analysis Reports & Certifications</h3>
               <p className="text-gem-charcoal/70 mb-6">
-                We work with accredited laboratories to analyze and verify the composition of our minerals and gemstones. On the right, you will find some of our certified analysis reports, confirming the quality and value of our products.
+                We work with accredited laboratories to analyze and verify the composition of our minerals and gemstones. Browse through our certified analysis reports, confirming the quality and value of our products.
               </p>
               <a href="tel:0920537777" className="gem-button-primary inline-block">
                 Book a Call With us
               </a>
             </div>
             
-            <div className="md:w-1/2 p-4 md:p-8">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-[3/4] shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-xl">
-                  <img 
-                    src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
-                    alt="Certificate 1" 
-                    className="w-full h-full object-cover"
-                  />
+            <div className="lg:w-3/5 p-4 md:p-8">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-5xl mx-auto"
+              >
+                <CarouselContent>
+                  {certificates.map((certificate, index) => (
+                    <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3 pl-2 pr-2">
+                      <div className="relative h-[450px] sm:h-[480px] overflow-hidden rounded-xl shadow-lg group">
+                        <img
+                          src={certificate.src}
+                          alt={certificate.alt}
+                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                          <div className="p-4 text-white">
+                            <p className="font-medium text-sm">{certificate.alt}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="flex justify-center mt-4 gap-2">
+                  <CarouselPrevious className="relative static left-0 right-0 translate-y-0 h-10 w-10" />
+                  <CarouselNext className="relative static left-0 right-0 translate-y-0 h-10 w-10" />
                 </div>
-                <div className="aspect-[3/4] shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-xl">
-                  <img 
-                    src="/lovable-uploads/photo_2025-02-06_16-31-37__2_-removebg-preview.png" 
-                    alt="Certificate 2" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              </Carousel>
             </div>
           </div>
         </div>
