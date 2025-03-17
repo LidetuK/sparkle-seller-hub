@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { X, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -95,13 +95,6 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
   return (
     <div className="relative max-h-[90vh] overflow-y-auto p-4 md:p-6">
       <DialogTitle className="sr-only">Order {product.name}</DialogTitle>
-      <button 
-        onClick={onClose}
-        className="absolute right-4 top-4 p-2 text-gem-charcoal/70 hover:text-gem-charcoal transition-colors bg-gray-100 rounded-full z-10"
-        aria-label="Close form"
-      >
-        <X className="w-5 h-5" />
-      </button>
       
       <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-6 mt-10 md:mt-0">
         <div className="sm:w-1/3">

@@ -17,11 +17,10 @@ const Footer = () => {
                 <img 
                   src="/lovable-uploads/LOGO COLERED white.png" 
                   alt="ONEX Gems" 
-                  
                 />
               </div>
             </Link>
-            <p className="text-white/70 mb-6">
+            <p className="text-white/70 mb-6 mt-4">
               Discover exquisite gemstones of the highest quality, ethically sourced and expertly crafted.
             </p>
             <div className="flex space-x-4">
