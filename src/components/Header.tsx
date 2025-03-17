@@ -1,10 +1,9 @@
 
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X, ShoppingCart, User, Search } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaTelegram } from 'react-icons/fa';
-
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,12 +75,12 @@ const Header = () => {
           {/* Right Side Icons */}
           <div className="hidden lg:flex items-center space-x-4">
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://web.facebook.com/profile.php?id=61574048693874&mibextid=wwXIfr&rdid=1YnBGMBr8qc4I2hi&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F18ynVhqR7m%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">
               <FaFacebook size={20} className="text-gem-charcoal" />
             </a>
           </button>
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/onex_1_member_plc/" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={20} className="text-gem-charcoal" />
             </a>
           </button>
@@ -183,12 +182,12 @@ const Header = () => {
 
         <div className="flex items-center space-x-4 mt-8 border-t border-gray-100 pt-8">
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://web.facebook.com/profile.php?id=61574048693874&mibextid=wwXIfr&rdid=1YnBGMBr8qc4I2hi&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F18ynVhqR7m%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">
               <FaFacebook size={20} className="text-gem-charcoal" />
             </a>
           </button>
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/onex_1_member_plc/" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={20} className="text-gem-charcoal" />
             </a>
           </button>

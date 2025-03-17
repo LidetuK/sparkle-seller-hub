@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -143,52 +144,54 @@ const Blog = () => {
             "mb-16 transition-all duration-1000 delay-300 transform",
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="relative overflow-hidden aspect-video md:aspect-auto">
-                  <img 
-                    src={blogPosts[0].image} 
-                    alt={blogPosts[0].title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 text-sm text-gem-charcoal/60 mb-4">
-                    <span className="bg-gem-charcoal/10 px-3 py-1 rounded-full">{blogPosts[0].category}</span>
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {blogPosts[0].readTime}
-                    </div>
+            <Link to={`/blog/${blogPosts[0].id}`} className="block">
+              <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div className="relative overflow-hidden aspect-video md:aspect-auto">
+                    <img 
+                      src={blogPosts[0].image} 
+                      alt={blogPosts[0].title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
                   </div>
-                  
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                    {blogPosts[0].title}
-                  </h2>
-                  
-                  <p className="text-gem-charcoal/70 mb-6">
-                    {blogPosts[0].excerpt}
-                  </p>
-                  
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-10 h-10 bg-gem-charcoal/10 rounded-full flex items-center justify-center">
-                      <User className="w-5 h-5 text-gem-charcoal/70" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium">{blogPosts[0].author}</div>
-                      <div className="text-xs text-gem-charcoal/60 flex items-center">
-                        <Calendar className="w-3 h-3 mr-1" /> 
-                        {blogPosts[0].date}
+                  <div className="p-8 md:p-10 flex flex-col justify-center">
+                    <div className="flex items-center gap-3 text-sm text-gem-charcoal/60 mb-4">
+                      <span className="bg-gem-charcoal/10 px-3 py-1 rounded-full">{blogPosts[0].category}</span>
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {blogPosts[0].readTime}
                       </div>
                     </div>
+                    
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                      {blogPosts[0].title}
+                    </h2>
+                    
+                    <p className="text-gem-charcoal/70 mb-6">
+                      {blogPosts[0].excerpt}
+                    </p>
+                    
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-10 h-10 bg-gem-charcoal/10 rounded-full flex items-center justify-center">
+                        <User className="w-5 h-5 text-gem-charcoal/70" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium">{blogPosts[0].author}</div>
+                        <div className="text-xs text-gem-charcoal/60 flex items-center">
+                          <Calendar className="w-3 h-3 mr-1" /> 
+                          {blogPosts[0].date}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <button className="group inline-flex items-center text-gem-charcoal font-medium">
+                      Read Article 
+                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                    </button>
                   </div>
-                  
-                  <button className="group inline-flex items-center text-gem-charcoal font-medium">
-                    Read Article 
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </button>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
           
           {/* Blog Grid */}
@@ -210,53 +213,55 @@ const Blog = () => {
                   )}
                   style={{"--index": index} as React.CSSProperties}
                 >
-                  <div className="relative overflow-hidden aspect-video">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="flex items-center text-xs text-gem-charcoal/60 gap-4 mb-3">
-                      <div className="flex items-center">
-                        <Calendar className="w-3 h-3 mr-1" /> 
-                        {post.date}
-                      </div>
-                      <div className="flex items-center">
-                        <Clock className="w-3 h-3 mr-1" />
-                        {post.readTime}
+                  <Link to={`/blog/${post.id}`} className="flex flex-col h-full">
+                    <div className="relative overflow-hidden aspect-video">
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium">
+                          {post.category}
+                        </span>
                       </div>
                     </div>
                     
-                    <h3 className="text-xl font-bold mb-3 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    
-                    <p className="text-gem-charcoal/70 text-sm mb-6 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gem-charcoal/10 rounded-full flex items-center justify-center">
-                          <User className="w-4 h-4 text-gem-charcoal/70" />
+                    <div className="p-6 flex-grow flex flex-col">
+                      <div className="flex items-center text-xs text-gem-charcoal/60 gap-4 mb-3">
+                        <div className="flex items-center">
+                          <Calendar className="w-3 h-3 mr-1" /> 
+                          {post.date}
                         </div>
-                        <div className="text-sm font-medium">{post.author}</div>
+                        <div className="flex items-center">
+                          <Clock className="w-3 h-3 mr-1" />
+                          {post.readTime}
+                        </div>
                       </div>
                       
-                      <button className="group inline-flex items-center text-gem-charcoal text-sm font-medium">
-                        Read
-                        <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
-                      </button>
+                      <h3 className="text-xl font-bold mb-3 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-gem-charcoal/70 text-sm mb-6 line-clamp-3 flex-grow">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-gem-charcoal/10 rounded-full flex items-center justify-center">
+                            <User className="w-4 h-4 text-gem-charcoal/70" />
+                          </div>
+                          <div className="text-sm font-medium">{post.author}</div>
+                        </div>
+                        
+                        <div className="group inline-flex items-center text-gem-charcoal text-sm font-medium">
+                          Read
+                          <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               );
             })}

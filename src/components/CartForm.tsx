@@ -92,16 +92,16 @@ const CartForm = ({ product, onClose }: CartFormProps) => {
   }
 
   return (
-    <div className="relative max-h-[90vh] overflow-y-auto p-4">
+    <div className="relative max-h-[90vh] overflow-y-auto p-4 md:p-6">
       <button 
         onClick={onClose}
-        className="absolute right-2 top-2 md:right-4 md:top-4 p-2 text-gem-charcoal/70 hover:text-gem-charcoal transition-colors bg-gray-100 rounded-full z-10"
+        className="absolute right-4 top-4 p-2 text-gem-charcoal/70 hover:text-gem-charcoal transition-colors bg-gray-100 rounded-full z-10"
         aria-label="Close form"
       >
         <X className="w-5 h-5" />
       </button>
       
-      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-6 mt-6 md:mt-0">
+      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-6 mt-10 md:mt-0">
         <div className="sm:w-1/3">
           <div className="aspect-square rounded-lg overflow-hidden bg-gray-100">
             <img 

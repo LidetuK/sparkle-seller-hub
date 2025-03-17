@@ -5,6 +5,44 @@ import Footer from '@/components/Footer';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import { Award, UserCheck, Target, Sparkles } from 'lucide-react';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious 
+} from '@/components/ui/carousel';
+
+const certificates = [
+  {
+    src: "/lovable-uploads/f7185ed2-1154-4593-b878-9469c399aa38.png",
+    alt: "Certificate Analysis - Tantalite Ore"
+  },
+  {
+    src: "/lovable-uploads/ad05fd15-6d33-4ad8-ace9-8a24b9cb0340.png",
+    alt: "Certificate Analysis - Tantalum"
+  },
+  {
+    src: "/lovable-uploads/13339e07-a00c-4257-b4fb-e652bfacf1df.png",
+    alt: "Certificate Analysis - Tantalite"
+  },
+  {
+    src: "/lovable-uploads/0ed458cb-2f5b-472f-907f-016de64c3ca0.png",
+    alt: "Certificate Analysis - Tantalum Sample"
+  },
+  {
+    src: "/lovable-uploads/abbd4b51-a3e0-4476-8680-513287a9cb91.png",
+    alt: "Certificate Analysis - Tantalum Sample 2" 
+  },
+  {
+    src: "/lovable-uploads/e9d61231-66ec-42b7-a1c1-87e6921b7b16.png",
+    alt: "Certificate Analysis - Lithium Ore"
+  },
+  {
+    src: "/lovable-uploads/e7e6e788-4f89-442e-85b2-76aa1b75de32.png",
+    alt: "Certificate Analysis - Lithium"
+  }
+];
 
 const AboutUs = () => {
   // Scroll to top on page load
@@ -16,6 +54,7 @@ const AboutUs = () => {
   const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.1 });
   const { ref: ref3, inView: inView3 } = useInView({ triggerOnce: true, threshold: 0.1 });
   const { ref: ref4, inView: inView4 } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: ref5, inView: inView5 } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -145,18 +184,7 @@ const AboutUs = () => {
               "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-1000 transform",
               inView4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              <div className="order-2 lg:order-1 aspect-video rounded-xl overflow-hidden shadow-xl">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
-                  title="Gemstone Sourcing Process" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                  className="w-full h-full object-cover"
-                ></iframe>
-              </div>
-              <div className="order-1 lg:order-2">
+              <div className="order-2 lg:order-1">
                 <h2 className="text-3xl font-bold mb-6">Our Certifications</h2>
                 <p className="mb-6 text-gem-charcoal/80">
                   We pride ourselves on adhering to the highest standards in the industry. 
@@ -191,6 +219,62 @@ const AboutUs = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <img 
+                  src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
+                  alt="Gemstone Sourcing Process"
+                  className="w-full h-auto object-contain rounded-xl"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Certificate Carousel */}
+          <section className="mb-24" ref={ref5}>
+            <div className={cn(
+              "transition-all duration-1000 transform",
+              inView5 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold mb-4">Our Analysis Reports</h2>
+                <p className="text-lg text-gem-charcoal/70 max-w-2xl mx-auto">
+                  Browse through our certified analysis reports from accredited laboratories
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-r from-gem-teal/10 via-gem-yellow/10 to-gem-red/10 rounded-2xl p-8 overflow-hidden">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full max-w-6xl mx-auto"
+                >
+                  <CarouselContent>
+                    {certificates.map((certificate, index) => (
+                      <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3 pl-2 pr-2">
+                        <div className="relative h-[320px] sm:h-[350px] md:h-[380px] overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+                          <img
+                            src={certificate.src}
+                            alt={certificate.alt}
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div className="p-4 text-white">
+                              <p className="font-medium text-sm">{certificate.alt}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex justify-center mt-6 gap-4">
+                    <CarouselPrevious className="relative static left-0 right-0 translate-y-0 h-10 w-10 bg-white hover:bg-gray-100 border border-gray-200" />
+                    <CarouselNext className="relative static left-0 right-0 translate-y-0 h-10 w-10 bg-white hover:bg-gray-100 border border-gray-200" />
+                  </div>
+                </Carousel>
               </div>
             </div>
           </section>

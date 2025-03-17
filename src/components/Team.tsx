@@ -49,6 +49,15 @@ const teamMembers: TeamMember[] = [
     email: "priya@onexgems.com",
     instagram: "priyaonexgems",
     linkedin: "priyasharma"
+  },
+  {
+    id: 5,
+    name: "Eskedar Zergaw",
+    role: "Deputy Manager",
+    image: "/lovable-uploads/ab9ae043-c9f8-43b8-97c5-17ee6b93c44b.png",
+    email: "eskedar@onexgems.com",
+    instagram: "/",
+    linkedin: "/"
   }
 ];
 
