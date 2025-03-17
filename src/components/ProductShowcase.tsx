@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
@@ -10,7 +9,7 @@ interface Product {
   id: string;
   name: string;
   category: string;
-  price: string;
+  
   image: string;
   isNew?: boolean;
   isFeatured?: boolean;
@@ -19,17 +18,15 @@ interface Product {
 const products: Product[] = [
   {
     id: "1",
-    name: "Ethiopian Lithium Ore",
-    category: "Lithium Ore",
-    price: "$3,999",
-    image: "/lovable-uploads/LITHIUM ORE.jpg",
-    isFeatured: true
+    name: "Ethiopian Copper ore",
+    category: "Copper ore",
+    image: "/lovable-uploads/COPER copy.jpg",
+    isNew: true
   },
   {
     id: "2",
     name: "Ethiopian Tantalum",
     category: "Tantalum",
-    price: "$2,499",
     image: "/lovable-uploads/TANTHULUM.jpg",
     isNew: true
   },
@@ -37,14 +34,12 @@ const products: Product[] = [
     id: "3",
     name: "Ethiopian Ruby",
     category: "Ruby",
-    price: "$1,899",
     image: "/lovable-uploads/RUBY.jpg",
   },
   {
     id: "4",
     name: "Ethiopian Sapphire",
     category: "Sapphire",
-    price: "$899",
     image: "/lovable-uploads/SAPHIER.jpg",
     isNew: true
   },
@@ -52,7 +47,6 @@ const products: Product[] = [
     id: "5",
     name: "Ethiopian Tourmaline",
     category: "Tourmaline",
-    price: "$1,299",
     image: "/lovable-uploads/TOURMALINE BLUE.jpg",
     isFeatured: true
   },
@@ -60,27 +54,24 @@ const products: Product[] = [
     id: "6",
     name: "Ethiopian Emerald",
     category: "Emerald",
-    price: "$2,199",
     image: "/lovable-uploads/EMERALD.jpg",
   },
   {
     id: "7",
     name: "Ethiopian Opal",
     category: "Opal",
-    price: "$1,499",
     image: "/lovable-uploads/OPAL.jpg",
   },
   {
     id: "8",
     name: "Ethiopian Aquamarine Stud",
     category: "Aquamarine",
-    price: "$799",
     image: "/lovable-uploads/AQUAMARINE.jpg",
     isNew: true
   }
 ];
 
-const categories = ["All", "Aquamarine", "Opal", "Emerald", "Tourmaline", "Sapphire", "Ruby", "Tantalum", "Lithium Ore"];
+const categories = ["All", "Aquamarine", "Opal", "Emerald", "Tourmaline", "Sapphire", "Ruby", "Tantalum", "Lithium Ore","Copper ore" ];
 
 const ProductShowcase = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -137,7 +128,6 @@ const ProductShowcase = () => {
             ))}
           </div>
         </div>
-
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredProducts.map((product, index) => (
@@ -193,7 +183,7 @@ const ProductShowcase = () => {
               <div className="text-center">
                 <span className="text-sm text-gem-charcoal/60 mb-1 block">{product.category}</span>
                 <h3 className="text-lg font-medium mb-1">{product.name}</h3>
-                <p className="text-lg font-semibold text-gem-charcoal">{product.price}</p>
+                
               </div>
             </div>
           ))}

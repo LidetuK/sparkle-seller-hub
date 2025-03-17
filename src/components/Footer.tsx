@@ -15,9 +15,9 @@ const Footer = () => {
             <Link to="/" className="inline-block mb-6">
               <div className="relative w-40 h-12">
                 <img 
-                  src="/lovable-uploads/65478f6d-c57f-4910-ab8f-055422ee27e4.png" 
+                  src="/lovable-uploads/LOGO COLERED white.png" 
                   alt="ONEX Gems" 
-                  className="object-contain w-full h-full filter brightness-0 invert"
+                  
                 />
               </div>
             </Link>
@@ -28,11 +28,8 @@ const Footer = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
                 <FaInstagram size={20} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
+              <a href="https://www.facebook.com/share/1L1hP116F6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
                 <FaFacebook size={20} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
-                <FaTwitter size={20} />
               </a>
               <a href="https://wa.me/+251920537777" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors duration-200">
                 <FaWhatsapp size={20} />
@@ -78,15 +75,17 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="mr-3 mt-1 text-gem-red" size={18} />
                 <span className="text-white/70">
-                Hawassa City, Sidama Regional State/ Addis Ababa, Kirkos Sub City, Ethiopia.<br />
-                810 Saturn St, Jupiter, Florida 33477, United States.<br />
+                Addis Ababa, Kirkos Sub City, 
+                <br />810 Saturn St, Jupiter, Florida 33477, United States.<br />
+                Hawassa City, Sidama Regional State
                   
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 text-gem-red" size={18} />
                 <a href="tel:+251920537777" className="text-white/70 hover:text-white transition-colors duration-200">
-                 (+251) 920537777
+                 (+251) 920537777<br/>
+                 (+251) 960999777
                 </a>
               </li>
               <li className="flex items-center">
@@ -126,7 +125,10 @@ const Footer = () => {
         
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center text-white/50 text-sm">
-          <p>© {currentYear} ONEX Gemstones. All rights reserved.</p>
+        <p>© {currentYear} ONEX Gemstones, All rights reserved,  
+  Powered by <a href="https://godigitalafrica.et/" target="_blank">Go Digital Africa</a>.
+</p>
+
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-white transition-colors duration-200">Terms of Service</Link>

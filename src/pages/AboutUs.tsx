@@ -124,6 +124,22 @@ const AboutUs = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+               {/* Vision */}
+               <div className={cn(
+                "gem-card transition-all duration-1000 delay-200 transform",
+                inView3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              )}>
+                <div className="bg-gem-teal/10 p-4 inline-block rounded-full mb-6">
+                  <Sparkles className="w-8 h-8 text-gem-teal" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Our Vision</h3>
+                <p className="text-gem-charcoal/70">
+                  To be the most trusted name in gemstone sourcing and jewelry, known for our 
+                  unwavering commitment to transparency, education, and exceptional craftsmanship. 
+                  We envision a world where every gemstone transaction contributes positively to 
+                  the communities from which these treasures originate.
+                </p>
+              </div>
               {/* Mission */}
               <div className={cn(
                 "gem-card transition-all duration-1000 delay-100 transform",
@@ -141,23 +157,7 @@ const AboutUs = () => {
                 </p>
               </div>
 
-              {/* Vision */}
-              <div className={cn(
-                "gem-card transition-all duration-1000 delay-200 transform",
-                inView3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              )}>
-                <div className="bg-gem-teal/10 p-4 inline-block rounded-full mb-6">
-                  <Sparkles className="w-8 h-8 text-gem-teal" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Our Vision</h3>
-                <p className="text-gem-charcoal/70">
-                  To be the most trusted name in gemstone sourcing and jewelry, known for our 
-                  unwavering commitment to transparency, education, and exceptional craftsmanship. 
-                  We envision a world where every gemstone transaction contributes positively to 
-                  the communities from which these treasures originate.
-                </p>
-              </div>
-
+              
               {/* Objectives */}
               <div className={cn(
                 "gem-card transition-all duration-1000 delay-300 transform",
@@ -223,7 +223,7 @@ const AboutUs = () => {
               
               <div className="order-1 lg:order-2">
                 <img 
-                  src="/lovable-uploads/photo_2025-02-06_16-31-37-removebg-preview.png" 
+                  src="/lovable-uploads/CERTIFICATE 01.jpg" 
                   alt="Gemstone Sourcing Process"
                   className="w-full h-auto object-contain rounded-xl"
                 />

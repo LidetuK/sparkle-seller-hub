@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingCart, User, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +27,7 @@ const Header = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-8',
         isScrolled 
-          ? 'bg-[#403E43]/95 shadow-sm backdrop-blur-md' 
+          ? 'bg-white shadow-sm backdrop-blur-md' 
           : 'bg-transparent'
       )}
     >
@@ -46,41 +46,41 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <NavLink to="/" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               Home
             </NavLink>
-            <NavLink to="/about-us" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/about-us" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               About Us
             </NavLink>
-            <NavLink to="/products" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/products" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               Products
             </NavLink>
-            <NavLink to="/gemstone-guide" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/gemstone-guide" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               Gemstone Guide
             </NavLink>
-            <NavLink to="/testimonials" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/testimonials" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               Testimonials
             </NavLink>
-            <NavLink to="/faq" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/faq" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               FAQ
             </NavLink>
-            <NavLink to="/blog" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/blog" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               Blog
             </NavLink>
-            <NavLink to="/contact" className={({ isActive }) => cn('nav-link text-white', isActive && 'nav-link-active')}>
+            <NavLink to="/contact" className={({ isActive }) => cn('nav-link text-light gray', isActive && 'nav-link-active')}>
               Contact
             </NavLink>
           </nav>
 
-          {/* Right Side Icons */}
+{/* Right Side Icons */}
           <div className="hidden lg:flex items-center space-x-4">
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://web.facebook.com/profile.php?id=61574048693874&mibextid=wwXIfr&rdid=1YnBGMBr8qc4I2hi&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F18ynVhqR7m%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebook size={20} className="text-gem-charcoal" />
             </a>
           </button>
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://www.instagram.com/onex_1_member_plc/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={20} className="text-gem-charcoal" />
             </a>
           </button>
@@ -172,8 +172,9 @@ const Header = () => {
             Blog
           </NavLink>
           <NavLink 
-            to="/contact" 
-            className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
+            to="/contact"
+
+className={({ isActive }) => cn('text-xl font-medium', isActive ? 'text-gem-red' : 'text-gem-charcoal')}
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
@@ -182,12 +183,12 @@ const Header = () => {
 
         <div className="flex items-center space-x-4 mt-8 border-t border-gray-100 pt-8">
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://web.facebook.com/profile.php?id=61574048693874&mibextid=wwXIfr&rdid=1YnBGMBr8qc4I2hi&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F18ynVhqR7m%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebook size={20} className="text-gem-charcoal" />
             </a>
           </button>
           <button className="p-2 rounded-full bg-gray-100">
-            <a href="https://www.instagram.com/onex_1_member_plc/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={20} className="text-gem-charcoal" />
             </a>
           </button>

@@ -79,10 +79,18 @@ const products: Product[] = [
     image: "/lovable-uploads/AQUAMARINE.jpg",
     isNew: true,
     description: "An elegant necklace featuring a large South Sea pearl pendant suspended from a diamond-encrusted chain."
+  },
+  {
+    id: "9",
+    name: "Ethiopian Copper Ore",
+    category: "Copper ore",
+    image: "/lovable-uploads/COPER copy.jpg",
+    isNew: true,
+    description: "Copper ore or Malachite with an excellent grade. We have a large quantity of copper ore for sale."
   }
 ];
 
-const categories = ["All", "Aquamarine", "Opal", "Emerald", "Tourmaline", "Sapphire", "Ruby", "Tantalum", "Lithium Ore"];
+const categories = ["All", "Aquamarine", "Opal", "Emerald", "Tourmaline", "Sapphire", "Ruby", "Tantalum", "Lithium Ore", "Copper ore"];
 
 const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");

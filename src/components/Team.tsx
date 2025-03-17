@@ -18,7 +18,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Mr Yohannes Gézahegn",
     role: "Founder, CEO & Lead Gemologist",
-    image: "/lovable-uploads/Yohannes Gezahegn.jpg",
+    image: "/lovable-uploads/STAF 04.jpg",
     email: "johnesku22@gmail.com",
     instagram: "/",
     linkedin: "/"
@@ -27,7 +27,7 @@ const teamMembers: TeamMember[] = [
     id: 2,
     name: "Wondwosen Mulugeta",
     role: "System Administrator &MULTIMEDIA Manager",
-    image: "/lovable-uploads/WONDWOSEN.jpg",
+    image: "/lovable-uploads/STAF 01.jpg",
     email: "Wondwosen Mulugeta@gmail.com",
     instagram: "/",
     linkedin: "/"
@@ -36,7 +36,7 @@ const teamMembers: TeamMember[] = [
     id: 3,
     name: "Dr John Neuhaus",
     role: "Head of Procurement and Quality Control ( SENIOR GEOLOGIST)",
-    image: "/lovable-uploads/Dr John Neuhaus.jpg",
+    image: "/lovable-uploads/STAF 05.jpg",
     email: "Dr John Neuhaus@gmail.com",
     instagram: "/",
     linkedin: "/"
@@ -45,7 +45,7 @@ const teamMembers: TeamMember[] = [
     id: 4,
     name: "Frehiwot Mulugeta",
     role: "Head of Sales and Marketing (SENIOR ACCOUNTING EXPERT)",
-    image: "/lovable-uploads/Frehiwot Mulugeta.jpg",
+    image: "/lovable-uploads/STAF 03.jpg",
     email: "priya@onexgems.com",
     instagram: "priyaonexgems",
     linkedin: "priyasharma"
