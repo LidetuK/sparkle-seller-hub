@@ -70,6 +70,11 @@ const WhyChooseUs = () => {
     threshold: 0.1,
   });
 
+  const { ref: goldRef, inView: goldInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <section className="section-padding bg-white relative overflow-hidden">
       {/* Decorative elements */}
@@ -156,6 +161,55 @@ const WhyChooseUs = () => {
                   <CarouselNext className="relative static left-0 right-0 translate-y-0 h-10 w-10 bg-white hover:bg-gray-100 border border-gray-200" />
                 </div>
               </Carousel>
+            </div>
+          </div>
+        </div>
+        
+        {/* Gold Exploration Services Section */}
+        <div className="mt-20" ref={goldRef}>
+          <div className={cn(
+            "bg-gradient-to-b from-[#1A1F2C] to-[#2A3040] rounded-2xl overflow-hidden shadow-xl transition-all duration-1000",
+            goldInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          )}>
+            <div className="flex flex-col lg:flex-row">
+              <div className="lg:w-1/2 p-8 md:p-12 text-left">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-[#FFD700]">Gold Exploration Services</h3>
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-white/80 mb-4">
+                    Ethiopia's history of gold extraction spans over 2,500 years, with significant quantities of gold mined from placer deposits. Recognizing the potential for deeper, bedrock gold resources, the Geological Survey of Ethiopia (GSE) was established in 1968 under the Ministry of Mines.
+                  </p>
+                  <p className="text-white/80 mb-4">
+                    Since then, systematic exploration has uncovered economically promising gold deposits, primarily mesothermal or orogenic in nature. However, much of the exploration has been preliminary, leaving vast, prospective areas still under-explored.
+                  </p>
+                  <p className="text-white/80 mb-6">
+                    As an OnexOne member, we provide expertise in modern exploration techniques, geological assessment, and resource estimation to unlock the untapped gold potential of Ethiopia.
+                  </p>
+                  <div className="mt-6">
+                    <a href="/contact" className="inline-flex items-center px-6 py-3 rounded-full bg-[#FFD700] text-black font-medium hover:bg-[#E5C100] transition-colors duration-300">
+                      Learn More About Our Services
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="lg:w-1/2 relative">
+                <div className="h-full flex items-center justify-center p-8 bg-gradient-to-r from-[#1A1F2C]/50 to-transparent">
+                  <div className="relative max-w-md">
+                    {/* Gold-like glow effect behind the image */}
+                    <div className="absolute inset-0 bg-[#FFD700]/20 rounded-full blur-3xl"></div>
+                    
+                    <img 
+                      src="/lovable-uploads/2652bf48-73b3-4bc9-9728-13c97a944a75.png" 
+                      alt="ONEX Mining Site" 
+                      className="relative z-10 w-full h-auto rounded-full shadow-[0_0_30px_rgba(255,215,0,0.4)] animate-float"
+                    />
+                    
+                    {/* Decorative elements */}
+                    <div className="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-[#FFD700]/30 animate-pulse"></div>
+                    <div className="absolute -bottom-4 -left-4 w-8 h-8 rounded-full bg-[#FFD700]/20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
