@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -21,7 +22,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/",  // Ensures correct base URL for production
+  base: "./",  // Use relative paths for assets
   preview: {
     port: 5000,
     historyApiFallback: true,  // Ensures routing works in preview mode
