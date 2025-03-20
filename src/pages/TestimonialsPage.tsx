@@ -326,7 +326,7 @@ const TestimonialsPage = () => {
               Have you purchased from ONEX? We'd love to hear about your experience. 
               Your feedback helps us improve and assists other customers in making informed decisions.
             </p>
-            <a href="http://localhost:8080/contact">
+            <a href="/contact">
   <button className="gem-button-primary inline-flex items-center gap-2">
     <MessageSquare className="w-4 h-4" />
     Write a Review

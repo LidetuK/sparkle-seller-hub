@@ -24,14 +24,14 @@ const slides: Slide[] = [
     title: "Handcrafted Excellence",
     subtitle: "Each piece carefully selected for its beauty and rarity",
     buttonText: "View Craftsmanship",
-    buttonLink: "/about"
+    buttonLink: "/about-us"
   },
   {
     image: "/lovable-uploads/TOURMALINE BLUE cave copy.jpg",
     title: "Ethically Sourced",
     subtitle: "Sustainable practices from mine to market",
     buttonText: "Our Standards",
-    buttonLink: "/about"
+    buttonLink: "/about-us"
   }
 ];
 
