@@ -1,100 +1,11 @@
-import { useInView } from 'react-intersection-observer';
-import { Diamond, BadgeCheck, TruckIcon, Shield, Award } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious 
-} from '@/components/ui/carousel';
-import { Button } from '@/components/ui/button';
 
-const features = [
-  {
-    icon: Diamond,
-    title: "Premium Selection",
-    description: "Every gemstone in our collection is handpicked for exceptional quality, color, and clarity."
-  },
-  {
-    icon: BadgeCheck,
-    title: "Authenticity Guaranteed",
-    description: "All our gemstones come with certification and guarantee of authenticity and origin."
-  },
-  {
-    icon: Shield,
-    title: "Ethical Sourcing",
-    description: "We're committed to responsible mining practices and ethical sourcing throughout our supply chain."
-  },
-  {
-    icon: TruckIcon,
-    title: "Global Market Expertise",
-    description: "With deep industry knowledge, we provide competitive solutions and insights in the global gemstone trade."
-  }
-];
-
-const certificates = [
-  {
-    src: "/lovable-uploads/8e0396b4-5590-485a-9d15-413fe9b65d1d.png",
-    alt: "Certificate of Completion - Gemstones Identification"
-  },
-  {
-    src: "/lovable-uploads/f7185ed2-1154-4593-b878-9469c399aa38.png",
-    alt: "Certificate Analysis - Tantalite Ore"
-  },
-  {
-    src: "/lovable-uploads/ad05fd15-6d33-4ad8-ace9-8a24b9cb0340.png",
-    alt: "Certificate Analysis - Tantalum"
-  },
-  {
-    src: "/lovable-uploads/13339e07-a00c-4257-b4fb-e652bfacf1df.png",
-    alt: "Certificate Analysis - Tantalite"
-  },
-  {
-    src: "/lovable-uploads/0ed458cb-2f5b-472f-907f-016de64c3ca0.png",
-    alt: "Certificate Analysis - Tantalum Sample"
-  },
-  {
-    src: "/lovable-uploads/abbd4b51-a3e0-4476-8680-513287a9cb91.png",
-    alt: "Certificate Analysis - Tantalum Sample 2" 
-  },
-  {
-    src: "/lovable-uploads/e9d61231-66ec-42b7-a1c1-87e6921b7b16.png",
-    alt: "Certificate Analysis - Lithium Ore"
-  },
-  {
-    src: "/lovable-uploads/e7e6e788-4f89-442e-85b2-76aa1b75de32.png",
-    alt: "Certificate Analysis - Lithium"
-  }
-];
-
-const completionCertificates = [
-  {
-    src: "/lovable-uploads/af696e8d-7bae-4306-8683-1c0236fab9ee.png",
-    alt: "Certificate of Completion - Yohannes Gezahegn Tunga"
-  },
-  {
-    src: "/lovable-uploads/dce3d8a8-09a5-43ab-93a7-ebed79bde0c4.png",
-    alt: "COOP Bank 20th Anniversary Invitation - Onex One Member PLC"
-  }
-];
+import SectionTitle from './common/SectionTitle';
+import FeaturesGrid from './features/FeaturesGrid';
+import AnalysisReports from './certifications/AnalysisReports';
+import CompletionCertificates from './certifications/CompletionCertificates';
+import GoldExploration from './services/GoldExploration';
 
 const WhyChooseUs = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const { ref: goldRef, inView: goldInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const { ref: certRef, inView: certInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <section className="section-padding bg-white relative overflow-hidden">
       {/* Decorative elements */}
@@ -102,178 +13,18 @@ const WhyChooseUs = () => {
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gem-teal/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16" ref={ref}>
-          <h2 className={cn(
-            "text-3xl md:text-4xl font-bold mb-4 transition-all duration-1000",
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            Why Choose ONEX
-          </h2>
-          <p className={cn(
-            "text-lg text-gem-charcoal/70 max-w-2xl mx-auto transition-all duration-1000 delay-100",
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            We pride ourselves on offering the highest quality gemstones with exceptional service
-          </p>
-        </div>
+        <SectionTitle 
+          title="Why Choose ONEX"
+          subtitle="We pride ourselves on offering the highest quality gemstones with exceptional service"
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className={cn(
-                "gem-card group hover:-translate-y-2 transition-all duration-500 delay-[calc(100ms*var(--index))]",
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              )}
-              style={{"--index": index} as React.CSSProperties}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center bg-gray-100 group-hover:bg-gem-teal/10 transition-colors duration-300">
-                  <feature.icon className="w-8 h-8 text-gem-charcoal group-hover:text-gem-teal transition-colors duration-300" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gem-charcoal/70">{feature.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <FeaturesGrid />
         
-        <div className="mt-20 bg-gradient-to-r from-gem-teal/10 via-gem-yellow/10 to-gem-red/10 rounded-2xl overflow-hidden">
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="lg:w-2/5 p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4">Analysis Reports & Certifications</h3>
-              <p className="text-gem-charcoal/70 mb-6">
-                We work with accredited laboratories to analyze and verify the composition of our minerals and gemstones. Browse through our certified analysis reports, confirming the quality and value of our products.
-              </p>
-              <a href="tel:0920537777" className="gem-button-primary inline-block">
-                Book a Call With us
-              </a>
-            </div>
-            
-            <div className="lg:w-3/5 p-4 md:p-8">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full max-w-5xl mx-auto"
-              >
-                <CarouselContent>
-                  {certificates.map((certificate, index) => (
-                    <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3 pl-2 pr-2">
-                      <div className="relative h-[320px] sm:h-[350px] md:h-[380px] overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-                        <img
-                          src={certificate.src}
-                          alt={certificate.alt}
-                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                          <div className="p-4 text-white">
-                            <p className="font-medium text-sm">{certificate.alt}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <div className="flex justify-center mt-6 gap-4">
-                  <CarouselPrevious className="relative static left-0 right-0 translate-y-0 h-10 w-10 bg-white hover:bg-gray-100 border border-gray-200" />
-                  <CarouselNext className="relative static left-0 right-0 translate-y-0 h-10 w-10 bg-white hover:bg-gray-100 border border-gray-200" />
-                </div>
-              </Carousel>
-            </div>
-          </div>
-        </div>
+        <AnalysisReports />
         
-        <div className="mt-20 bg-gradient-to-r from-gem-teal/10 via-gem-yellow/10 to-gem-red/10 rounded-2xl overflow-hidden" ref={certRef}>
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="lg:w-2/5 p-8 md:p-12">
-              <div className="flex items-center gap-3 mb-4">
-                <Award className="w-8 h-8 text-gem-red" />
-                <h3 className="text-2xl md:text-3xl font-semibold text-gem-charcoal">Certificate of Completion</h3>
-              </div>
-              <p className="text-gem-charcoal/70 mb-6">
-                Our team members have completed specialized professional training and certifications in gemstone identification, assessment, and mineral analysis. Our expertise is recognized by leading institutions in the industry.
-              </p>
-              <a href="tel:0920537777" className="gem-button-primary inline-block">
-                Contact Our Experts
-              </a>
-            </div>
-            
-            <div className="lg:w-3/5 p-4 md:p-8">
-              <div className="grid grid-cols-1 gap-8">
-                {completionCertificates.map((certificate, index) => (
-                  <div key={index} className={cn(
-                    "rounded-xl shadow-lg overflow-hidden transition-all duration-700",
-                    certInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-                    index === 1 && "mt-4"
-                  )}
-                  style={{"--delay": `${index * 300}ms`} as React.CSSProperties}>
-                    <div className="relative block aspect-[16/9] w-full overflow-hidden rounded-t-xl">
-                      <img
-                        src={certificate.src}
-                        alt={certificate.alt}
-                        className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-4 bg-white">
-                      <p className="text-gem-charcoal font-medium text-center">{certificate.alt}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <CompletionCertificates />
         
-        <div className="mt-20" ref={goldRef}>
-          <div className={cn(
-            "bg-gradient-to-r from-gem-teal/10 via-gem-yellow/10 to-gem-red/10 rounded-2xl overflow-hidden shadow-xl transition-all duration-1000",
-            goldInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            <div className="flex flex-col lg:flex-row">
-              <div className="lg:w-1/2 p-8 md:p-12 text-left">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gem-charcoal">Gold Exploration Services</h3>
-                <div className="prose max-w-none">
-                  <p className="text-gem-charcoal/80 mb-4">
-                    Ethiopia's history of gold extraction spans over 2,500 years, with significant quantities of gold mined from placer deposits. Recognizing the potential for deeper, bedrock gold resources, the Geological Survey of Ethiopia (GSE) was established in 1968 under the Ministry of Mines.
-                  </p>
-                  <p className="text-gem-charcoal/80 mb-4">
-                    Since then, systematic exploration has uncovered economically promising gold deposits, primarily mesothermal or orogenic in nature. However, much of the exploration has been preliminary, leaving vast, prospective areas still under-explored.
-                  </p>
-                  <p className="text-gem-charcoal/80 mb-6">
-                    As an OnexOne member, we provide expertise in modern exploration techniques, geological assessment, and resource estimation to unlock the untapped gold potential of Ethiopia.
-                  </p>
-                  <div className="mt-6">
-                    <Button 
-                      asChild 
-                      className="bg-gem-teal hover:bg-gem-teal/90 text-white font-medium transition-colors duration-300"
-                    >
-                      <a href="/about-us">Learn More About Us</a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="lg:w-1/2 relative">
-                <div className="h-full flex items-center justify-center p-8">
-                  <div className="relative max-w-md">
-                    <div className="absolute inset-0 bg-gem-yellow/20 rounded-full blur-3xl"></div>
-                    
-                    <img 
-                      src="/lovable-uploads/2652bf48-73b3-4bc9-9728-13c97a944a75.png" 
-                      alt="ONEX Mining Site" 
-                      className="relative z-10 w-full h-auto rounded-full shadow-[0_0_30px_rgba(32,201,195,0.3)] animate-float"
-                    />
-                    
-                    <div className="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-gem-teal/30 animate-pulse"></div>
-                    <div className="absolute -bottom-4 -left-4 w-8 h-8 rounded-full bg-gem-red/20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <GoldExploration />
       </div>
     </section>
   );
