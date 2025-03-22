@@ -1,7 +1,6 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Quote, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface Testimonial {
@@ -17,36 +16,31 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Emily Thompson",
     quote: "The ruby I purchased from ONEX exceeded all my expectations. The color is magnificent and the craftsmanship is impeccable. I'll definitely be returning for more stunning pieces.",
-    rating: 5,
-    image: "/lovable-uploads/RUBY.jpg"
+    rating: 5
   },
   {
     id: 2,
     name: "Michael Chen",
     quote: "As a gemstone collector for over 15 years, I can confidently say that ONEX offers some of the finest specimens I've encountered. Their dedication to quality and authenticity is unmatched.",
-    rating: 5,
-    image: "/lovable-uploads/EMERALD.jpg"
+    rating: 5
   },
   {
     id: 3,
     name: "Sarah Johnson",
     quote: "I purchased an anniversary gift for my wife and the sapphire pendant is breathtaking. The customer service was exceptional, and they helped me select the perfect stone.",
-    rating: 5,
-    image: "/lovable-uploads/SAPHIER.jpg"
+    rating: 5
   },
   {
     id: 4,
     name: "David Wilson",
     quote: "I was nervous about buying fine gemstones online, but ONEX made the process seamless. The emerald arrived exactly as described, and the certification gave me complete peace of mind.",
-    rating: 4,
-    image: "/lovable-uploads/OPAL.jpg"
+    rating: 4
   },
   {
     id: 5,
     name: "Alexandra Rivera",
     quote: "As a jewelry designer, I rely on high-quality gemstones for my creations. ONEX consistently provides exceptional stones that my clients adore. Their ethical sourcing practices align perfectly with my brand values.",
-    rating: 5,
-    image: "/lovable-uploads/TOURMALINE BLUE.jpg"
+    rating: 5
   }
 ];
 
@@ -68,7 +62,6 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
-  // Handle touch events for mobile swiping
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
@@ -79,12 +72,10 @@ const Testimonials = () => {
   
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 50) {
-      // Swipe left
       nextSlide();
     }
     
     if (touchStart - touchEnd < -50) {
-      // Swipe right
       prevSlide();
     }
   };
@@ -106,7 +97,6 @@ const Testimonials = () => {
 
   return (
     <section className="section-padding bg-gem-charcoal text-white relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gem-red rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gem-teal rounded-full blur-3xl"></div>
@@ -129,7 +119,6 @@ const Testimonials = () => {
         </div>
 
         <div className="relative overflow-hidden mx-auto max-w-5xl">
-          {/* Testimonial Slider */}
           <div 
             ref={sliderRef}
             className="flex transition-transform duration-700 ease-out"
@@ -154,14 +143,8 @@ const Testimonials = () => {
                   
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center">
-                      <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mr-4">
-                        {testimonial.image && (
-                          <img 
-                            src={testimonial.image}
-                            alt={testimonial.name} 
-                            className="w-full h-full object-cover"
-                          />
-                        )}
+                      <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mr-4 flex items-center justify-center">
+                        <User className="w-8 h-8 text-gray-400" />
                       </div>
                       <div>
                         <h4 className="font-semibold">{testimonial.name}</h4>
@@ -184,7 +167,6 @@ const Testimonials = () => {
             ))}
           </div>
           
-          {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
             className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 text-gem-charcoal p-2 md:p-3 rounded-full shadow-lg hover:bg-white transition-colors duration-300"
@@ -202,7 +184,6 @@ const Testimonials = () => {
           </button>
         </div>
         
-        {/* Dots Navigation */}
         <div className="flex justify-center space-x-2 mt-8">
           {testimonials.map((_, index) => (
             <button

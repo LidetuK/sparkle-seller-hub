@@ -1,3 +1,4 @@
+
 import { useInView } from 'react-intersection-observer';
 import { Diamond, BadgeCheck, TruckIcon, Shield } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -34,6 +35,10 @@ const features = [
 ];
 
 const certificates = [
+  {
+    src: "/lovable-uploads/8e0396b4-5590-485a-9d15-413fe9b65d1d.png",
+    alt: "Certificate of Completion - Gemstones Identification"
+  },
   {
     src: "/lovable-uploads/f7185ed2-1154-4593-b878-9469c399aa38.png",
     alt: "Certificate Analysis - Tantalite Ore"

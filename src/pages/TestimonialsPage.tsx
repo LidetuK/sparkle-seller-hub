@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
@@ -104,7 +103,6 @@ const reviews: Review[] = [
 ];
 
 const TestimonialsPage = () => {
-  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -125,10 +123,8 @@ const TestimonialsPage = () => {
     }
   }, [filter]);
 
-  // Calculate average rating
   const averageRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
   
-  // Calculate rating distribution
   const ratingDistribution = [5, 4, 3, 2, 1].map(rating => {
     const count = reviews.filter(review => review.rating === rating).length;
     const percentage = (count / reviews.length) * 100;
@@ -155,7 +151,6 @@ const TestimonialsPage = () => {
             </p>
           </div>
           
-          {/* Rating Summary */}
           <div className="bg-white rounded-xl shadow-md mb-16 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3">
               <div className="bg-gradient-to-br from-gem-charcoal to-gem-charcoal/90 text-white p-8 md:p-10 flex flex-col items-center justify-center">
@@ -199,7 +194,6 @@ const TestimonialsPage = () => {
                   ))}
                 </div>
                 
-                {/* Filter buttons */}
                 <div className="mt-8 flex flex-wrap gap-2">
                   <button 
                     onClick={() => setFilter(null)}
@@ -232,7 +226,6 @@ const TestimonialsPage = () => {
             </div>
           </div>
           
-          {/* Reviews Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filteredReviews.map((review, index) => {
               const { ref, inView } = useInView({
@@ -254,15 +247,7 @@ const TestimonialsPage = () => {
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full overflow-hidden bg-gem-charcoal/10 flex items-center justify-center">
-                        {review.avatar ? (
-                          <img 
-                            src={review.avatar} 
-                            alt={review.name} 
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <User className="w-6 h-6 text-gem-charcoal/40" />
-                        )}
+                        <User className="w-6 h-6 text-gem-charcoal/40" />
                       </div>
                       
                       <div>
@@ -319,7 +304,6 @@ const TestimonialsPage = () => {
             })}
           </div>
           
-          {/* Add Review */}
           <div className="mt-16 text-center">
             <h2 className="text-2xl font-bold mb-4">Share Your Experience</h2>
             <p className="text-gem-charcoal/70 max-w-2xl mx-auto mb-6">
